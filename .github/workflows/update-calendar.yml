@@ -1,19 +1,31 @@
-
 name: Actualizar calendario Yeguada Agrado
 
 on:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: 'Publicar participantes confirmados (solo tras revisar la vista previa)'
+        required: true
+        type: boolean
+        default: false
+  schedule:
+    - cron: '15 7 * * *'
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: agrado-calendar
+  cancel-in-progress: false
 
 jobs:
-  probar-extractor:
+  actualizar:
     runs-on: ubuntu-latest
-
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Configurar Python
         uses: actions/setup-python@v5
@@ -21,9 +33,33 @@ jobs:
           python-version: '3.12'
 
       - name: Instalar dependencias
-        run: |
-          python -m pip install requests beautifulsoup4 lxml
+        run: python -m pip install requests beautifulsoup4 lxml
 
-      - name: Ejecutar extractor
+      - name: Ejecutar extractor y generar vista previa
         run: |
-          python update_calendar.py
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" = "true" ]; then
+            python update_calendar.py --publish
+          else
+            python update_calendar.py
+          fi
+
+      - name: Guardar vista previa de participaciones
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agrado-calendar-preview
+          path: calendar-preview.json
+          if-no-files-found: ignore
+
+      - name: Guardar calendario publicado
+        if: github.event_name == 'workflow_dispatch' && inputs.publish == true
+        run: |
+          if git diff --quiet -- calendar.json; then
+            echo 'Sin cambios que guardar'
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add calendar.json
+            git commit -m 'Actualizar participantes confirmados'
+            git push
+          fi
