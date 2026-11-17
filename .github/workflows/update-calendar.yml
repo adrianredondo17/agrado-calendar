@@ -40,9 +40,13 @@ jobs:
 
       - name: Ejecutar extractor
         env:
-          PUBLISH: ${{ (github.event_name == 'schedule' || inputs.publish == true) && 'true' || 'false' }}
+          SHOULD_PUBLISH: ${{ (github.event_name == 'schedule' || inputs.publish == true) && 'true' || 'false' }}
         run: |
-          python update_calendar.py
+          if [ "$SHOULD_PUBLISH" = "true" ]; then
+            python update_calendar.py --publish
+          else
+            python update_calendar.py
+          fi
 
       - name: Guardar vista previa
         if: always()
