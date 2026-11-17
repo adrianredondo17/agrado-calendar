@@ -1,0 +1,27 @@
+
+name: Actualizar calendario Yeguada Agrado
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  comprobar-configuracion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Comprobar archivo del calendario
+        run: |
+          python -m json.tool calendar.json > /dev/null
+          echo "El archivo calendar.json es válido."
+          echo "Configuración inicial completada."
