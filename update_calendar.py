@@ -153,7 +153,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--publish', action='store_true', help='Publicar solo participantes confirmados')
     args = parser.parse_args()
-    print('=== YEGUADA AGRADO | EXTRACTOR SEGURO V1.0 ===', flush=True)
+    print('=== YEGUADA AGRADO | EXTRACTOR SEGURO V1.2 ===', flush=True)
     sire_data = {sire: products(sire) for sire in STALLIONS}
     meetings = discover_meetings()
     races = []
@@ -201,7 +201,7 @@ def main():
         print(f'SOLO PRUEBA | calendar.json intacto | carreras sin caballos: {len(empty_races)}', flush=True)
         return
     if empty_races:
-        raise RuntimeError('Publicacion bloqueada: hay carreras sin participantes legibles. Revisar vista previa.')
+        print(f'AVISO | {len(empty_races)} carreras sin participantes legibles; se conservan los eventos anteriores de esas fechas', flush=True)
     if not confirmed:
         raise RuntimeError('Sin participantes confirmados: se impide publicar')
     if not CALENDAR.exists():
@@ -209,10 +209,24 @@ def main():
     calendar = json.loads(CALENDAR.read_text(encoding='utf-8'))
     if not isinstance(calendar.get('wins'), list) or not isinstance(calendar.get('participants'), list):
         raise RuntimeError('Estructura calendar.json inesperada')
-    # Solo se reemplazan participantes futuros cuando el nuevo lote tiene confirmados.
-    today = date.today().isoformat()
-    old = [e for e in calendar['participants'] if not isinstance(e, dict) or str(e.get('date', '')) < today]
-    calendar['participants'] = old + confirmed
+    # No borrar participaciones anteriores: añadir/actualizar solamente las
+    # confirmadas por su identificador de carrera y caballo. Las carreras
+    # vacías o pendientes nunca causan eliminación de eventos existentes.
+    existing = calendar['participants']
+    def event_key(e):
+        if not isinstance(e, dict):
+            return None
+        return (str(e.get('date', '')), norm(e.get('horse', '')),
+                str(e.get('url', '')).split('&')[0])
+    by_key = {event_key(e): i for i, e in enumerate(existing) if event_key(e) is not None}
+    for event in confirmed:
+        key = event_key(event)
+        if key in by_key:
+            existing[by_key[key]] = {**existing[by_key[key]], **event}
+        else:
+            by_key[key] = len(existing)
+            existing.append(event)
+    calendar['participants'] = existing
     calendar['lastUpdated'] = datetime.now(timezone.utc).isoformat()
     CALENDAR.write_text(json.dumps(calendar, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print('PUBLICADO EN ARCHIVO LOCAL | calendar.json | wins preservadas', flush=True)
