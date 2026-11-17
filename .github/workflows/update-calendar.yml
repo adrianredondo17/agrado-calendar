@@ -11,7 +11,8 @@ on:
         default: false
 
   schedule:
-    - cron: '0 7 * * *'
+    - cron: '0 13 * * *'
+      timezone: 'Europe/Madrid'
 
 permissions:
   contents: read
