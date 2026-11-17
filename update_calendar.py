@@ -1,6 +1,7 @@
 """Yeguada Agrado: extractor seguro, con vista previa y publicación opcional.
 
-No incorpora victorias: preserva siempre las existentes.
+Importa victorias históricas españolas desde un archivo local y preserva las existentes.
+No identifica automáticamente nuevas victorias: requiere un extractor de resultados validado.
 Publicación únicamente con --publish y datos confirmados.
 """
 import argparse
@@ -20,6 +21,7 @@ BASE = 'https://www.todoturf.net/'
 STALLIONS = ('BOW CREEK', 'NOOZHOH CANARIAS', 'RODABALLO', 'NARANCO')
 CALENDAR = Path('calendar.json')
 PREVIEW = Path('calendar-preview.json')
+HISTORICAL_WINS = Path('victorias_espana_2026.json')
 SESSION = requests.Session()
 SESSION.headers.update({'User-Agent': 'Mozilla/5.0 (compatible; AgradoCalendar/1.0)'})
 
@@ -92,149 +94,3 @@ def discover_meetings():
                     found.append(url)
     found = list(dict.fromkeys(found))
     print(f'JORNADAS | {len(found)} futuras detectadas', flush=True)
-    if not found:
-        raise RuntimeError('No se han descubierto jornadas futuras. No publicar. Revisar HTML de programa.php')
-    return found
-
-
-def race_links(meeting):
-    soup, html = get(meeting)
-    candidates = [a.get('href', '') for a in soup.select('a[href]')]
-    candidates += re.findall(r'programa3\.php\?[^\s"\'<>]+', html, flags=re.I)
-    urls = []
-    for raw in candidates:
-        url = urljoin(BASE, raw.replace('&amp;', '&'))
-        if urlparse(url).path.endswith('/programa3.php'):
-            urls.append(url)
-    return list(dict.fromkeys(urls))
-
-
-def race_date(url, soup):
-    raw = parse_qs(urlparse(url).query).get('fecha', [''])[0].strip().split(' ')[0]
-    try:
-        return date.fromisoformat(raw).isoformat()
-    except ValueError:
-        match = re.search(r'\b(\d{2}/\d{2}/\d{4})\b', soup.get_text(' ', strip=True))
-        return datetime.strptime(match.group(1), '%d/%m/%Y').date().isoformat() if match else None
-
-
-def race_entries(url):
-    soup, _ = get(url)
-    day = race_date(url, soup)
-    if not day:
-        raise RuntimeError('Fecha de carrera desconocida: ' + url)
-    title = soup.select_one('h2.mbr-section-title')
-    race_name = title.get_text(' ', strip=True) if title else 'Carrera'
-    entries = []
-    seen = set()
-    for tr in soup.select('table tr'):
-        a = next((a for a in tr.select('a[href]') if horse_id(a)), None)
-        if not a:
-            continue
-        cells = tr.find_all('td')  # Todoturf contiene celdas sin cerrar.
-        if len(cells) < 4:
-            continue
-        identifier = horse_id(a)
-        if identifier in seen:
-            continue
-        seen.add(identifier)
-        jockey_anchor = tr.select_one('a[href*="historialjockey.php"]')
-        jockey = jockey_anchor.get_text(' ', strip=True) if jockey_anchor else ''
-        # Extraer SOLO el primer td, no los td anidados que podrían contaminarlo.
-        number = cells[0].find('b')
-        number = number.get_text(' ', strip=True) if number else cells[0].get_text(' ', strip=True).split(' ')[0]
-        entries.append({'date': day, 'horse': clean_name(a.get_text(' ', strip=True)),
-                        'horse_id': identifier, 'number': number, 'jockey': jockey,
-                        'race': race_name, 'url': url})
-    return entries
-
-
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--publish', action='store_true', help='Publicar solo participantes confirmados')
-    args = parser.parse_args()
-    print('=== YEGUADA AGRADO | EXTRACTOR SEGURO V1.2 ===', flush=True)
-    sire_data = {sire: products(sire) for sire in STALLIONS}
-    meetings = discover_meetings()
-    races = []
-    for meeting in meetings:
-        found = race_links(meeting)
-        print(f'JORNADA | {meeting} | {len(found)} carreras', flush=True)
-        if not found:
-            raise RuntimeError('Jornada sin carreras legibles: ' + meeting)
-        races.extend(found)
-    races = list(dict.fromkeys(races))
-    matches, total = [], 0
-    empty_races = []
-    for url in races:
-        entries = race_entries(url)
-        if not entries:
-            empty_races.append(url)
-            print(f'AVISO | Carrera sin caballos publicados o legibles | {url}', flush=True)
-            continue
-        total += len(entries)
-        print(f'CARRERA | {len(entries)} caballos | {url}', flush=True)
-        for entry in entries:
-            matching = [sire for sire, (ids, names) in sire_data.items()
-                        if entry['horse_id'] in ids or norm(entry['horse']) in names]
-            if len(matching) > 1:
-                raise RuntimeError('Caballo asociado a varios sementales: ' + entry['horse'])
-            if not matching:
-                continue
-            # Un dorsal cero indica que NO podemos tratarlo como confirmado.
-            confirmed = entry['number'].isdigit() and int(entry['number']) > 0 and bool(entry['jockey'])
-            event = {'date': entry['date'], 'horse': entry['horse'], 'stallion': matching[0],
-                     'race': entry['race'], 'jockey': entry['jockey'], 'number': entry['number'],
-                     'url': entry['url'], 'status': 'confirmed' if confirmed else 'pending'}
-            matches.append(event)
-            print(f'COINCIDENCIA | {event["horse"]} | {event["stallion"]} | {event["status"]}', flush=True)
-    if total == 0:
-        raise RuntimeError('CERO CABALLOS LEIDOS. No publicar.')
-    confirmed = [e for e in matches if e['status'] == 'confirmed']
-    print(f'RESUMEN | jornadas={len(meetings)} carreras={len(races)} caballos={total} '
-          f'coincidencias={len(matches)} confirmados={len(confirmed)}', flush=True)
-    PREVIEW.write_text(json.dumps({'meetings': meetings, 'totalHorses': total,
-                                   'emptyRaces': empty_races, 'matches': matches},
-                                  ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print('VISTA PREVIA | calendar-preview.json', flush=True)
-    if not args.publish:
-        print(f'SOLO PRUEBA | calendar.json intacto | carreras sin caballos: {len(empty_races)}', flush=True)
-        return
-    if empty_races:
-        print(f'AVISO | {len(empty_races)} carreras sin participantes legibles; se conservan los eventos anteriores de esas fechas', flush=True)
-    if not confirmed:
-        raise RuntimeError('Sin participantes confirmados: se impide publicar')
-    if not CALENDAR.exists():
-        raise RuntimeError('calendar.json no existe')
-    calendar = json.loads(CALENDAR.read_text(encoding='utf-8'))
-    if not isinstance(calendar.get('wins'), list) or not isinstance(calendar.get('participants'), list):
-        raise RuntimeError('Estructura calendar.json inesperada')
-    # No borrar participaciones anteriores: añadir/actualizar solamente las
-    # confirmadas por su identificador de carrera y caballo. Las carreras
-    # vacías o pendientes nunca causan eliminación de eventos existentes.
-    existing = calendar['participants']
-    def event_key(e):
-        if not isinstance(e, dict):
-            return None
-        return (str(e.get('date', '')), norm(e.get('horse', '')),
-                str(e.get('url', '')).split('&')[0])
-    by_key = {event_key(e): i for i, e in enumerate(existing) if event_key(e) is not None}
-    for event in confirmed:
-        key = event_key(event)
-        if key in by_key:
-            existing[by_key[key]] = {**existing[by_key[key]], **event}
-        else:
-            by_key[key] = len(existing)
-            existing.append(event)
-    calendar['participants'] = existing
-    calendar['lastUpdated'] = datetime.now(timezone.utc).isoformat()
-    CALENDAR.write_text(json.dumps(calendar, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    print('PUBLICADO EN ARCHIVO LOCAL | calendar.json | wins preservadas', flush=True)
-
-
-if __name__ == '__main__':
-    try:
-        main()
-    except Exception as exc:
-        print('ERROR: ' + str(exc), file=sys.stderr, flush=True)
-        sys.exit(1)
