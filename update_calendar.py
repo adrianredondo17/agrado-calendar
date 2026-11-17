@@ -1,5 +1,22 @@
 
-"""Todoturf race-card importer (phase 1). Never guesses race results."""
+"""
+YEGUADA AGRADO
+Extractor Todoturf - Fase 1: diagnóstico de participantes.
+
+Sementales:
+- BOW CREEK
+- NOOZHOH CANARIAS
+- RODABALLO
+- NARANCO
+
+Esta versión:
+1. Consulta los productos de los cuatro sementales.
+2. Consulta los programas de carreras de Todoturf.
+3. Muestra los caballos encontrados en cada carrera.
+4. Identifica coincidencias con nuestros sementales.
+5. No elimina participantes ni modifica resultados históricos.
+6. No publica datos automáticamente en GitHub Pages.
+"""
 
 import json
 import re
@@ -15,6 +32,10 @@ import requests
 from bs4 import BeautifulSoup
 
 
+# ============================================
+# CONFIGURACIÓN
+# ============================================
+
 BASE = "https://www.todoturf.net/"
 
 STALLIONS = (
@@ -27,37 +48,65 @@ STALLIONS = (
 DATA = Path("calendar.json")
 
 HEADERS = {
-    "User-Agent": "AgradoCalendar/0.1 (public racing data; low-frequency checks)"
+    "User-Agent": (
+        "AgradoCalendar/0.1 "
+        "(public racing data; low-frequency checks)"
+    )
 }
 
 session = requests.Session()
 session.headers.update(HEADERS)
 
 
+# ============================================
+# FUNCIONES AUXILIARES
+# ============================================
+
 def norm(value):
-    value = unicodedata.normalize("NFKD", str(value).upper())
+    value = unicodedata.normalize(
+        "NFKD",
+        str(value).upper()
+    )
+
     value = "".join(
         char for char in value
         if not unicodedata.combining(char)
     )
-    return re.sub(r"[^A-Z0-9]+", " ", value).strip()
+
+    return re.sub(
+        r"[^A-Z0-9]+",
+        " ",
+        value
+    ).strip()
 
 
 def get(url):
+
     if urlparse(url).netloc not in (
         "www.todoturf.net",
         "todoturf.net",
     ):
-        raise ValueError("Unexpected domain: " + url)
+        raise ValueError(
+            "Unexpected domain: " + url
+        )
 
-    response = session.get(url, timeout=25)
+    response = session.get(
+        url,
+        timeout=25
+    )
+
     response.raise_for_status()
+
     time.sleep(0.4)
 
-    return BeautifulSoup(response.content, "html.parser")
+    return BeautifulSoup(
+        response.content,
+        "html.parser"
+    )
 
 
 def links(soup, filename):
+
     return [
         urljoin(BASE, a["href"])
         for a in soup.select("a[href]")
@@ -66,12 +115,16 @@ def links(soup, filename):
 
 
 def unique(items):
+
     return list(dict.fromkeys(items))
 
 
+# ============================================
+# PRODUCTOS DE CADA SEMENTAL
+# ============================================
+
 def horse_names(sire):
 
-    # Todoturf uses BOW CREEK2 in the supplied URL.
     nombre_todoturf = (
         "BOW CREEK2"
         if sire == "BOW CREEK"
@@ -82,7 +135,10 @@ def horse_names(sire):
         "nombresemental": nombre_todoturf
     })
 
-    print(f"Consultando productos de {sire}: {url}")
+    print(
+        f"\nConsultando productos de {sire}: {url}",
+        flush=True
+    )
 
     soup = get(url)
 
@@ -90,8 +146,12 @@ def horse_names(sire):
         (
             table
             for table in soup.select("table")
-            if "Madre" in table.get_text(" ", strip=True)
-            and "Ganancias" in table.get_text(" ", strip=True)
+            if "Madre" in table.get_text(
+                " ", strip=True
+            )
+            and "Ganancias" in table.get_text(
+                " ", strip=True
+            )
         ),
         None,
     )
@@ -104,6 +164,7 @@ def horse_names(sire):
     names = set()
 
     for row in table.select("tr"):
+
         cells = row.find_all("td")
 
         if not cells:
@@ -114,7 +175,9 @@ def horse_names(sire):
         if not horse_link:
             continue
 
-        name = horse_link.get_text(" ", strip=True)
+        name = horse_link.get_text(
+            " ", strip=True
+        )
 
         name = re.sub(
             r"\s+(?:Cas\.|C\.|Y\.|M\.).*$",
@@ -144,38 +207,45 @@ def horse_names(sire):
             "No products found for " + sire
         )
 
-    print(f"{sire}: {len(names)} productos encontrados")
+    print(
+        f"{sire}: {len(names)} productos encontrados",
+        flush=True
+    )
 
     return names
 
+
+# ============================================
+# LECTURA DE CARRERAS
+# ============================================
 
 def race_data(url):
 
     soup = get(url)
 
-    title = soup.find(
-        ["h1", "h2", "h3"],
-        string=re.compile(r"Premio", re.I),
+    title = next(
+        (
+            element
+            for element in soup.find_all(
+                ["h1", "h2", "h3"]
+            )
+            if "Premio " in element.get_text(
+                " ", strip=True
+            )
+        ),
+        None,
     )
 
     if not title:
-        title = next(
-            (
-                element
-                for element in soup.find_all(
-                    ["h1", "h2", "h3"]
-                )
-                if "Premio " in element.get_text(
-                    " ", strip=True
-                )
-            ),
-            None,
+        print(
+            f"DIAGNÓSTICO | Sin título de premio: {url}",
+            flush=True
         )
-
-    if not title:
         return []
 
-    heading = title.get_text(" ", strip=True)
+    heading = title.get_text(
+        " ", strip=True
+    )
 
     match = re.search(
         r"carrera.*?(\d\d/\d\d/\d{4}).*?"
@@ -185,6 +255,11 @@ def race_data(url):
     )
 
     if not match:
+        print(
+            f"DIAGNÓSTICO | Fecha o hipódromo "
+            f"no reconocido: {url}",
+            flush=True
+        )
         return []
 
     day, venue = match.groups()
@@ -213,6 +288,11 @@ def race_data(url):
     )
 
     if table is None:
+        print(
+            f"DIAGNÓSTICO | Tabla de participantes "
+            f"no encontrada: {url}",
+            flush=True
+        )
         return []
 
     participants = []
@@ -248,7 +328,19 @@ def race_data(url):
             " ", strip=True
         )
 
-        # Exclude clearly provisional entries.
+        # DIAGNÓSTICO:
+        # Mostrar los caballos leídos por Todoturf.
+        print(
+            f"DIAGNÓSTICO | "
+            f"Fecha: {iso_date} | "
+            f"Caballo: {horse!r} | "
+            f"Dorsal: {number!r} | "
+            f"Jinete: {jockey!r} | "
+            f"Carrera: {url}",
+            flush=True
+        )
+
+        # No incluir inscripciones claramente provisionales.
         if (
             not number.isdigit()
             or int(number) == 0
@@ -271,6 +363,10 @@ def race_data(url):
     return participants
 
 
+# ============================================
+# PROGRAMA PRINCIPAL
+# ============================================
+
 def main():
 
     if not DATA.exists():
@@ -279,27 +375,39 @@ def main():
         )
 
     original = json.loads(
-        DATA.read_text(encoding="utf-8")
+        DATA.read_text(
+            encoding="utf-8"
+        )
     )
 
     existing = original.get(
         "participants", []
     )
 
-    # Stop safely if any sire cannot be parsed.
+    print(
+        "\n=== YEGUADA AGRADO: EXTRACCIÓN TODOTURF ===",
+        flush=True
+    )
+
     sires = {
         sire: horse_names(sire)
         for sire in STALLIONS
     }
 
-    print("Consultando programa de Todoturf...")
+    print(
+        "\nConsultando programa de Todoturf...",
+        flush=True
+    )
 
     program = get(
         BASE + "programa.php"
     )
 
     meetings = unique(
-        links(program, "programa2.php")
+        links(
+            program,
+            "programa2.php"
+        )
     )
 
     if not meetings:
@@ -311,22 +419,35 @@ def main():
     race_urls = []
 
     for meeting in meetings:
+
         meeting_page = get(meeting)
 
         race_urls.extend(
             links(
                 meeting_page,
-                "programa3.php",
+                "programa3.php"
             )
         )
 
-    race_urls = unique(race_urls)
+    race_urls = unique(
+        race_urls
+    )
 
     if not race_urls:
         raise RuntimeError(
             "No race links found: "
             "site structure may have changed"
         )
+
+    print(
+        f"\nJornadas encontradas: {len(meetings)}",
+        flush=True
+    )
+
+    print(
+        f"Carreras encontradas: {len(race_urls)}",
+        flush=True
+    )
 
     found = []
 
@@ -339,6 +460,14 @@ def main():
             for sire, names in sires.items():
 
                 if norm(entry["horse"]) in names:
+
+                    print(
+                        f"\nCOINCIDENCIA ENCONTRADA | "
+                        f"{entry['horse']} | "
+                        f"{sire} | "
+                        f"{entry['date']}",
+                        flush=True
+                    )
 
                     found.append({
                         **entry,
@@ -354,9 +483,9 @@ def main():
 
                     break
 
-    # Preserve existing participants.
-    # Do not remove horses until official
-    # result verification is implemented.
+    # Conservar los participantes existentes.
+    # No eliminar nada hasta implementar
+    # la comprobación de resultados oficiales.
 
     by_id = {
         item["id"]: item
@@ -396,15 +525,40 @@ def main():
     )
 
     print(
-        f"Checked {len(meetings)} meetings, "
-        f"{len(race_urls)} races; "
-        f"found {len(found)} qualifying entries; "
-        f"total {len(original['participants'])} participants"
+        "\n========== RESUMEN ==========",
+        flush=True
     )
 
     print(
-        "Results and videos are NOT "
-        "imported by this phase."
+        f"Jornadas consultadas: {len(meetings)}",
+        flush=True
+    )
+
+    print(
+        f"Carreras consultadas: {len(race_urls)}",
+        flush=True
+    )
+
+    print(
+        f"Participantes encontrados: {len(found)}",
+        flush=True
+    )
+
+    print(
+        f"Total participantes: "
+        f"{len(original['participants'])}",
+        flush=True
+    )
+
+    print(
+        "Resultados y vídeos: pendientes de integración.",
+        flush=True
+    )
+
+    print(
+        "NOTA: Esta prueba no publica cambios "
+        "en GitHub Pages.",
+        flush=True
     )
 
 
@@ -418,7 +572,9 @@ if __name__ == "__main__":
         print(
             f"SAFE FAILURE: {error}",
             file=sys.stderr,
+            flush=True
         )
 
         sys.exit(1)
+
 
