@@ -8,20 +8,22 @@ permissions:
   contents: read
 
 jobs:
-  comprobar-configuracion:
+  probar-extractor:
     runs-on: ubuntu-latest
 
     steps:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
-      - name: Preparar Python
+      - name: Configurar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      - name: Comprobar archivo del calendario
+      - name: Instalar dependencias
         run: |
-          python -m json.tool calendar.json > /dev/null
-          echo "El archivo calendar.json es válido."
-          echo "Configuración inicial completada."
+          python -m pip install requests beautifulsoup4 lxml
+
+      - name: Ejecutar extractor
+        run: |
+          python update_calendar.py
