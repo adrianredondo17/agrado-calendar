@@ -146,8 +146,6 @@ def race_entries(url):
         entries.append({'date': day, 'horse': clean_name(a.get_text(' ', strip=True)),
                         'horse_id': identifier, 'number': number, 'jockey': jockey,
                         'race': race_name, 'url': url})
-    if not entries:
-        raise RuntimeError('Carrera sin participantes legibles: ' + url)
     return entries
 
 
@@ -167,8 +165,13 @@ def main():
         races.extend(found)
     races = list(dict.fromkeys(races))
     matches, total = [], 0
+    empty_races = []
     for url in races:
         entries = race_entries(url)
+        if not entries:
+            empty_races.append(url)
+            print(f'AVISO | Carrera sin caballos publicados o legibles | {url}', flush=True)
+            continue
         total += len(entries)
         print(f'CARRERA | {len(entries)} caballos | {url}', flush=True)
         for entry in entries:
@@ -190,12 +193,15 @@ def main():
     confirmed = [e for e in matches if e['status'] == 'confirmed']
     print(f'RESUMEN | jornadas={len(meetings)} carreras={len(races)} caballos={total} '
           f'coincidencias={len(matches)} confirmados={len(confirmed)}', flush=True)
-    PREVIEW.write_text(json.dumps({'meetings': meetings, 'totalHorses': total, 'matches': matches},
+    PREVIEW.write_text(json.dumps({'meetings': meetings, 'totalHorses': total,
+                                   'emptyRaces': empty_races, 'matches': matches},
                                   ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print('VISTA PREVIA | calendar-preview.json', flush=True)
     if not args.publish:
-        print('SOLO PRUEBA | calendar.json intacto', flush=True)
+        print(f'SOLO PRUEBA | calendar.json intacto | carreras sin caballos: {len(empty_races)}', flush=True)
         return
+    if empty_races:
+        raise RuntimeError('Publicacion bloqueada: hay carreras sin participantes legibles. Revisar vista previa.')
     if not confirmed:
         raise RuntimeError('Sin participantes confirmados: se impide publicar')
     if not CALENDAR.exists():
