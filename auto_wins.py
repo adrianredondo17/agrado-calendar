@@ -4,6 +4,11 @@
 No importa resultados anteriores al 18/11/2026.
 Comprueba el ganador en la ficha de resultados de Todoturf.
 Evita duplicados por fecha y caballo.
+
+Guarda automáticamente:
+- url: enlace directo a resultados3.php
+- video_url: enlace a videocarrera.php, si hay vídeo verificable
+
 Solo modifica calendar.json con --publish.
 """
 
@@ -13,12 +18,20 @@ import re
 import sys
 import time
 import unicodedata
+
 from datetime import date, datetime, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, urlencode, urljoin, urlparse
+from urllib.parse import (
+    parse_qs,
+    urlencode,
+    urljoin,
+    urlparse,
+    urlunparse,
+)
 
 import requests
 from bs4 import BeautifulSoup
+
 
 BASE = "https://www.todoturf.net/"
 CALENDAR = Path("calendar.json")
@@ -38,39 +51,80 @@ SESSION.headers.update({
 
 
 def norm(value):
-    value = unicodedata.normalize("NFKD", str(value).upper())
-    value = "".join(
-        c for c in value if not unicodedata.combining(c)
+    value = unicodedata.normalize(
+        "NFKD",
+        str(value).upper()
     )
-    return re.sub(r"[^A-Z0-9]+", " ", value).strip()
+
+    value = "".join(
+        c for c in value
+        if not unicodedata.combining(c)
+    )
+
+    return re.sub(
+        r"[^A-Z0-9]+",
+        " ",
+        value
+    ).strip()
 
 
 def get(url):
     parsed = urlparse(url)
+
     if (
         parsed.scheme != "https"
-        or parsed.hostname not in ("todoturf.net", "www.todoturf.net")
+        or parsed.hostname not in (
+            "todoturf.net",
+            "www.todoturf.net"
+        )
     ):
-        raise ValueError("URL no permitida: " + url)
+        raise ValueError(
+            "URL no permitida: " + url
+        )
 
-    response = SESSION.get(url, timeout=30)
+    response = SESSION.get(
+        url,
+        timeout=30
+    )
+
     response.raise_for_status()
-    response.encoding = response.apparent_encoding or response.encoding
+
+    response.encoding = (
+        response.apparent_encoding
+        or response.encoding
+    )
+
     time.sleep(0.2)
-    return BeautifulSoup(response.text, "html.parser")
+
+    return BeautifulSoup(
+        response.text,
+        "html.parser"
+    )
 
 
 def horse_link(anchor):
-    url = urljoin(BASE, anchor.get("href", ""))
+    url = urljoin(
+        BASE,
+        anchor.get("href", "")
+    )
+
     parsed = urlparse(url)
 
-    if not parsed.path.endswith("/historialcaballo2.php"):
+    if not parsed.path.endswith(
+        "/historialcaballo2.php"
+    ):
         return None
 
-    if parsed.hostname not in ("todoturf.net", "www.todoturf.net"):
+    if parsed.hostname not in (
+        "todoturf.net",
+        "www.todoturf.net"
+    ):
         return None
 
-    name = parse_qs(parsed.query).get("nombrecaballo", [""])[0]
+    name = parse_qs(
+        parsed.query
+    ).get("nombrecaballo", [""])[0]
+
     if not name:
         return None
 
@@ -78,7 +132,12 @@ def horse_link(anchor):
 
 
 def products(sire):
-    lookup = "BOW CREEK2" if sire == "BOW CREEK" else sire
+    lookup = (
+        "BOW CREEK2"
+        if sire == "BOW CREEK"
+        else sire
+    )
+
     url = BASE + "productossemental2.php?" + urlencode({
         "nombresemental": lookup
     })
@@ -88,14 +147,26 @@ def products(sire):
 
     for anchor in soup.select("a[href]"):
         result = horse_link(anchor)
+
         if result:
             horse_url, identifier = result
             found[identifier] = horse_url
 
-    print(f"PRODUCTOS | {sire} | {len(found)}", flush=True)
+    print(
+        f"PRODUCTOS | {sire} | {len(found)}",
+        flush=True
+    )
 
-    if sire in ("BOW CREEK", "NOOZHOH CANARIAS") and not found:
-        raise RuntimeError("No se encontraron productos: " + sire)
+    if (
+        sire in (
+            "BOW CREEK",
+            "NOOZHOH CANARIAS"
+        )
+        and not found
+    ):
+        raise RuntimeError(
+            "No se encontraron productos: " + sire
+        )
 
     return found
 
@@ -104,7 +175,6 @@ def history_wins(horse_url):
     soup = get(horse_url)
     wins = []
 
-    # Identificar la tabla de historial por sus encabezados.
     history_table = None
 
     for table in soup.find_all("table"):
@@ -123,7 +193,8 @@ def history_wins(horse_url):
 
     if history_table is None:
         raise RuntimeError(
-            "No se encontró la tabla de historial: " + horse_url
+            "No se encontró la tabla de historial: "
+            + horse_url
         )
 
     for tr in history_table.select("tr"):
@@ -132,21 +203,34 @@ def history_wins(horse_url):
         if len(cells) < 9:
             continue
 
-        raw_date = cells[0].get_text(" ", strip=True)
-        position = cells[4].get_text(" ", strip=True)
+        raw_date = cells[0].get_text(
+            " ",
+            strip=True
+        )
+
+        position = cells[4].get_text(
+            " ",
+            strip=True
+        )
 
         try:
             day = datetime.strptime(
-                raw_date, "%d/%m/%Y"
+                raw_date,
+                "%d/%m/%Y"
             ).date()
         except ValueError:
             continue
 
-        if day < START_DATE or day > date.today():
+        if (
+            day < START_DATE
+            or day > date.today()
+        ):
             continue
 
-        # Únicamente primera posición: 1/8, 1/12, etc.
-        if not re.fullmatch(r"1\s*/\s*\d+", position):
+        if not re.fullmatch(
+            r"1\s*/\s*\d+",
+            position
+        ):
             continue
 
         anchor = cells[0].select_one(
@@ -156,16 +240,27 @@ def history_wins(horse_url):
         if anchor is None:
             continue
 
-        result_url = urljoin(BASE, anchor["href"])
-        params = parse_qs(urlparse(result_url).query)
+        result_url = urljoin(
+            BASE,
+            anchor["href"]
+        )
 
-        # Excluir cualquier resultado extranjero.
-        if params.get("pais", [""])[0].upper() != "ESP":
+        params = parse_qs(
+            urlparse(result_url).query
+        )
+
+        if (
+            params.get("pais", [""])[0].upper()
+            != "ESP"
+        ):
             continue
 
         wins.append({
             "date": day.isoformat(),
-            "venue": cells[1].get_text(" ", strip=True),
+            "venue": cells[1].get_text(
+                " ",
+                strip=True
+            ),
             "url": result_url,
         })
 
@@ -178,17 +273,31 @@ def verify_result(candidate, horse_identifier):
 
     heading = soup.find(
         lambda tag:
-            tag.name in ("h1", "h2", "h3", "h4", "h5")
-            and "PREMIO" in norm(tag.get_text(" ", strip=True))
+            tag.name in (
+                "h1", "h2", "h3", "h4", "h5"
+            )
+            and "PREMIO" in norm(
+                tag.get_text(" ", strip=True)
+            )
     )
 
     if heading is None:
-        raise RuntimeError("Premio no identificado: " + url)
+        raise RuntimeError(
+            "Premio no identificado: " + url
+        )
 
-    race = heading.get_text(" ", strip=True)
-    race = re.sub(r"^Premio\s+", "", race, flags=re.I).strip()
+    race = heading.get_text(
+        " ",
+        strip=True
+    )
 
-    # Verificar el primer clasificado en la tabla de resultados.
+    race = re.sub(
+        r"^Premio\s+",
+        "",
+        race,
+        flags=re.I
+    ).strip()
+
     verified = False
 
     for table in soup.find_all("table"):
@@ -200,7 +309,10 @@ def verify_result(candidate, horse_identifier):
             if len(cells) < 2:
                 continue
 
-            place = cells[0].get_text(" ", strip=True)
+            place = cells[0].get_text(
+                " ",
+                strip=True
+            )
 
             if place != "1":
                 continue
@@ -215,6 +327,7 @@ def verify_result(candidate, horse_identifier):
 
             if anchor:
                 _, winner_id = horse_link(anchor)
+
                 if winner_id == horse_identifier:
                     verified = True
                     break
@@ -224,32 +337,177 @@ def verify_result(candidate, horse_identifier):
 
     if not verified:
         raise RuntimeError(
-            "No se pudo verificar el ganador: " + url
+            "No se pudo verificar el ganador: "
+            + url
         )
 
     return race
 
 
+# -----------------------------------------
+# NUEVO: ENLACES AUTOMÁTICOS DE REPETICIÓN
+# -----------------------------------------
+
+def video_url_from_result(result_url):
+    """Construye la URL del vídeo con los mismos
+    identificadores de la carrera.
+    """
+
+    parsed = urlparse(result_url)
+
+    if not parsed.path.endswith(
+        "/resultados3.php"
+    ):
+        return None
+
+    params = parse_qs(parsed.query)
+
+    required = (
+        "numero",
+        "fecha",
+        "pais",
+        "tipo",
+    )
+
+    if any(
+        not params.get(key)
+        for key in required
+    ):
+        return None
+
+    if params["pais"][0].upper() != "ESP":
+        return None
+
+    video_path = parsed.path.replace(
+        "/resultados3.php",
+        "/videocarrera.php"
+    )
+
+    return urlunparse((
+        parsed.scheme,
+        parsed.netloc,
+        video_path,
+        parsed.params,
+        parsed.query,
+        ""
+    ))
+
+
+def verify_video(video_url):
+    """Busca indicios explícitos de vídeo.
+
+    Si no puede confirmarse, no publica el botón.
+    Una página HTTP 200 no demuestra por sí sola
+    que exista una repetición.
+    """
+
+    if not video_url:
+        return False
+
+    try:
+        soup = get(video_url)
+
+        # Reproductores HTML5.
+        if soup.find("video"):
+            return True
+
+        # Fuentes de vídeo HTML5.
+        if soup.find("source", src=re.compile(
+            r"\.(mp4|webm|m3u8)(?:\?|$)",
+            re.I
+        )):
+            return True
+
+        # Reproductores externos embebidos.
+        for iframe in soup.find_all("iframe"):
+            src = iframe.get("src", "")
+
+            if re.search(
+                r"youtube\.com/embed/|"
+                r"youtube-nocookie\.com/embed/|"
+                r"player\.vimeo\.com/video/",
+                src,
+                re.I
+            ):
+                return True
+
+        return False
+
+    except Exception as exc:
+        print(
+            f"AVISO VIDEO | {video_url} | {exc}",
+            flush=True
+        )
+        return False
+
+
+def get_video_url(result_url):
+    """Devuelve el enlace de repetición únicamente
+    cuando se detecta un reproductor reconocible.
+    """
+
+    candidate = video_url_from_result(
+        result_url
+    )
+
+    if not candidate:
+        return None
+
+    if verify_video(candidate):
+        print(
+            f"VIDEO ENCONTRADO | {candidate}",
+            flush=True
+        )
+        return candidate
+
+    print(
+        f"VIDEO NO CONFIRMADO | {candidate}",
+        flush=True
+    )
+
+    return None
+
+
+# -----------------------------------------
+# PROCESO PRINCIPAL
+# -----------------------------------------
+
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--publish", action="store_true")
+
+    parser.add_argument(
+        "--publish",
+        action="store_true"
+    )
+
     args = parser.parse_args()
 
     if not CALENDAR.exists():
-        raise RuntimeError("No existe calendar.json")
+        raise RuntimeError(
+            "No existe calendar.json"
+        )
 
-    calendar = json.loads(CALENDAR.read_text(encoding="utf-8"))
+    calendar = json.loads(
+        CALENDAR.read_text(
+            encoding="utf-8"
+        )
+    )
 
-    if not isinstance(calendar.get("wins"), list):
-        raise RuntimeError("calendar.json no contiene wins válido")
+    if not isinstance(
+        calendar.get("wins"),
+        list
+    ):
+        raise RuntimeError(
+            "calendar.json no contiene wins válido"
+        )
 
     existing = calendar["wins"]
 
-    # Se considera duplicada una victoria del mismo caballo
-    # en la misma fecha, independientemente de cómo se escriba
-    # el nombre del premio.
     known = {
-        (str(w.get("date", "")), norm(w.get("horse", "")))
+        (
+            str(w.get("date", "")),
+            norm(w.get("horse", ""))
+        )
         for w in existing
         if isinstance(w, dict)
     }
@@ -265,17 +523,28 @@ def main():
                 continue
 
             checked.add(identifier)
-            candidates = history_wins(horse_url)
+
+            candidates = history_wins(
+                horse_url
+            )
 
             for candidate in candidates:
-                # Usar el nombre de la ficha del caballo.
-                parsed = urlparse(horse_url)
-                horse = parse_qs(parsed.query).get(
-                    "nombrecaballo", [""]
+
+                parsed = urlparse(
+                    horse_url
+                )
+
+                horse = parse_qs(
+                    parsed.query
+                ).get(
+                    "nombrecaballo",
+                    [""]
                 )[0]
 
                 horse = re.sub(
-                    r",\s*20\d{2}$", "", horse
+                    r",\s*20\d{2}$",
+                    "",
+                    horse
                 ).strip()
 
                 horse = re.sub(
@@ -285,29 +554,48 @@ def main():
                     flags=re.I
                 ).strip()
 
-                key = (candidate["date"], norm(horse))
+                key = (
+                    candidate["date"],
+                    norm(horse)
+                )
 
                 if key in known:
                     continue
 
-                race = verify_result(candidate, identifier)
+                # Verificación del ganador.
+                race = verify_result(
+                    candidate,
+                    identifier
+                )
+
+                # Nuevo: búsqueda automática del vídeo.
+                video_url = get_video_url(
+                    candidate["url"]
+                )
 
                 win = {
                     "date": candidate["date"],
                     "horse": horse,
                     "stallion": sire,
                     "race": race,
-                    "venue": candidate["venue"] + ", España",
+                    "venue": (
+                        candidate["venue"]
+                        + ", España"
+                    ),
                     "url": candidate["url"],
                     "source": "todoturf_auto"
                 }
+
+                # No se inventan enlaces a vídeos.
+                if video_url:
+                    win["video_url"] = video_url
 
                 new_wins.append(win)
                 known.add(key)
 
                 print(
-                    f'NUEVA VICTORIA | {horse} | {race} | '
-                    f'{candidate["date"]}',
+                    f"NUEVA VICTORIA | {horse} | "
+                    f"{race} | {candidate['date']}",
                     flush=True
                 )
 
@@ -318,26 +606,38 @@ def main():
     )
 
     if not args.publish:
-        print("MODO PRUEBA | No se modifica calendar.json", flush=True)
+        print(
+            "MODO PRUEBA | No se modifica calendar.json",
+            flush=True
+        )
         return
 
     if new_wins:
         existing.extend(new_wins)
+
         existing.sort(
-            key=lambda w: str(w.get("date", "")),
+            key=lambda w: str(
+                w.get("date", "")
+            ),
             reverse=True
         )
+
         calendar["lastUpdated"] = datetime.now(
             timezone.utc
         ).isoformat()
 
         CALENDAR.write_text(
-            json.dumps(calendar, ensure_ascii=False, indent=2) + "\n",
+            json.dumps(
+                calendar,
+                ensure_ascii=False,
+                indent=2
+            ) + "\n",
             encoding="utf-8"
         )
 
     print(
-        f"VICTORIAS PUBLICADAS | nuevas={len(new_wins)} "
+        f"VICTORIAS PUBLICADAS | "
+        f"nuevas={len(new_wins)} "
         f"total={len(existing)}",
         flush=True
     )
@@ -346,6 +646,11 @@ def main():
 if __name__ == "__main__":
     try:
         main()
+
     except Exception as exc:
-        print("ERROR: " + str(exc), file=sys.stderr, flush=True)
+        print(
+            "ERROR: " + str(exc),
+            file=sys.stderr,
+            flush=True
+        )
         sys.exit(1)
