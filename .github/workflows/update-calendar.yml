@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: "Publicar participaciones y victorias confirmadas"
+        description: "Publicar participaciones y victorias"
         required: false
         type: boolean
         default: false
@@ -38,7 +38,7 @@ jobs:
         run: |
           python -m pip install requests beautifulsoup4 lxml
 
-      - name: Ejecutar extractor de participaciones
+      - name: Actualizar participaciones
         env:
           SHOULD_PUBLISH: ${{ (github.event_name == 'schedule' || inputs.publish == true) && 'true' || 'false' }}
         run: |
@@ -56,6 +56,16 @@ jobs:
             python auto_wins.py --publish
           else
             python auto_wins.py
+          fi
+
+      - name: Eliminar participaciones finalizadas
+        env:
+          SHOULD_PUBLISH: ${{ (github.event_name == 'schedule' || inputs.publish == true) && 'true' || 'false' }}
+        run: |
+          if [ "$SHOULD_PUBLISH" = "true" ]; then
+            python cleanup_participants.py --publish
+          else
+            python cleanup_participants.py
           fi
 
       - name: Guardar vista previa
@@ -79,5 +89,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add calendar.json
-          git commit -m "Actualizar calendario y victorias Yeguada Agrado"
+          git commit -m "Actualizar calendario Yeguada Agrado"
           git push
