@@ -15,6 +15,7 @@ import argparse
 import json
 import re
 import sys
+
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -29,7 +30,6 @@ from auto_wins import (
     BASE,
     STALLIONS,
     get,
-    horse_link,
     norm,
     products,
     verify_result,
@@ -57,7 +57,9 @@ def clean_name(value):
     value = str(value or "").strip()
 
     value = re.sub(
-        r",\s*20\d{2}$", "", value
+        r",\s*20\d{2}$",
+        "",
+        value,
     )
 
     value = re.sub(
@@ -162,6 +164,7 @@ def history_results(horse_url):
                     cells[0].get_text(" ", strip=True),
                     "%d/%m/%Y",
                 ).date().isoformat()
+
             except ValueError:
                 continue
 
@@ -218,6 +221,7 @@ def build_index():
 
             try:
                 results = history_results(horse_url)
+
             except Exception as exc:
                 print(
                     f"AVISO HISTORIAL | "
@@ -308,14 +312,35 @@ def discover_meeting(day, venue):
 
 
 def winner_names(soup):
-    """Obtiene nombres de ganadores desde filas
-    cuya primera columna indica posición 1.
+    """Lee los nombres visibles de los ganadores.
+
+    Todoturf puede mostrar:
+        PRETTY ROSE (FR)
+
+    Aunque el identificador interno sea:
+        PRETTY ROSE II
+
+    Para comparar con el calendario debemos
+    utilizar el nombre visible.
     """
 
     winners = set()
 
     for table in soup.find_all("table"):
-        for row in table.find_all("tr"):
+        headers = [
+            norm(th.get_text(" ", strip=True))
+            for th in table.select("thead th")
+        ]
+
+        # Solo analizar la tabla de resultados.
+        if not (
+            len(headers) >= 2
+            and headers[0].rstrip(".") == "P"
+            and headers[1] == "CABALLO"
+        ):
+            continue
+
+        for row in table.select("tbody tr"):
             cells = row.find_all("td")
 
             if len(cells) < 2:
@@ -325,29 +350,36 @@ def winner_names(soup):
                 " ", strip=True
             )
 
-            if not re.fullmatch(
-                r"1(?:\s*/\s*\d+)?",
-                position,
-            ):
+            # El ganador aparece con posición 1.
+            if position != "1":
                 continue
 
-            for anchor in cells[1].select("a[href]"):
-                result = horse_link(anchor)
+            anchor = cells[1].select_one(
+                'a[href*="historialcaballo2.php"]'
+            )
 
-                if result:
-                    _, identifier = result
-                    winners.add(
-                        clean_name(identifier)
-                    )
+            if not anchor:
+                continue
+
+            # Leer el texto mostrado en la tabla.
+            visible_name = anchor.get_text(
+                " ", strip=True
+            )
+
+            horse_name = clean_name(visible_name)
+
+            if horse_name:
+                winners.add(horse_name)
 
     return winners
 
 
 def verify_by_name(url, horse):
-    """Comprueba nombre exacto del ganador.
+    """Comprueba el nombre exacto del ganador.
 
-    No usa coincidencias parciales.
-    No verifica por sí sola la filiación.
+    No acepta coincidencias parciales.
+    La filiación debe estar previamente
+    respaldada por el calendario.
     """
 
     soup = get(url)
@@ -389,25 +421,36 @@ def verify_candidate(url, win, known_horses):
         set(),
     )
 
-    # Si existe un identificador conocido,
-    # usamos la verificación más estricta.
+    # Primero comprobar directamente el nombre
+    # visible del ganador en la carrera.
+    if not verify_by_name(url, horse):
+        return False
+
+    # Si hay identificadores conocidos, realizar
+    # también la comprobación del historial.
     if known_ids:
         for identifier in known_ids:
             try:
-                verify_result(
+                verified = verify_result(
                     {"url": url},
                     identifier,
                 )
-                return True
+
+                if verified:
+                    return True
+
             except Exception:
                 continue
 
+        # El nombre visible ya está confirmado,
+        # pero el identificador puede diferir.
+        # No aceptar automáticamente un conflicto
+        # con un identificador conocido.
         return False
 
-    # Si Todoturf no incluye el caballo en
-    # el listado de productos, comprobamos
-    # el ganador por su nombre exacto.
-    return verify_by_name(url, horse)
+    # Si el listado de productos no proporciona
+    # identificador, utilizar el nombre visible.
+    return True
 
 
 def find_from_history(win, index):
@@ -421,11 +464,13 @@ def find_from_history(win, index):
 
     for candidate in index.get(key, []):
         try:
-            verify_result(
+            verified = verify_result(
                 candidate,
                 candidate["identifier"],
             )
-            valid.append(candidate["url"])
+
+            if verified:
+                valid.append(candidate["url"])
 
         except Exception as exc:
             print(
@@ -540,8 +585,8 @@ def main():
             win, index
         )
 
-        # Si el historial no resuelve
-        # la victoria, buscamos la jornada.
+        # Si el historial no encuentra una
+        # coincidencia única, buscar la jornada.
         if len(valid) != 1:
             fallback = find_from_meeting(
                 win,
