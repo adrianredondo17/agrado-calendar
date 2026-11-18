@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       publish:
-        description: "Publicar participaciones y victorias"
+        description: "Publicar participaciones, victorias y enlaces"
         required: false
         type: boolean
         default: false
@@ -56,6 +56,16 @@ jobs:
             python auto_wins.py --publish
           else
             python auto_wins.py
+          fi
+
+      - name: Completar enlaces de resultados y videos
+        env:
+          SHOULD_PUBLISH: ${{ (github.event_name == 'schedule' || inputs.publish == true) && 'true' || 'false' }}
+        run: |
+          if [ "$SHOULD_PUBLISH" = "true" ]; then
+            python backfill_win_links.py --publish
+          else
+            python backfill_win_links.py
           fi
 
       - name: Eliminar participaciones finalizadas
