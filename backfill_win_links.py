@@ -1,19 +1,26 @@
 
-"""Completa enlaces de resultados y vídeos de victorias españolas.
+"""Completa automáticamente resultados y vídeos de victorias españolas.
 
-Busca las carreras en los historiales de Todoturf.
-Verifica el ganador antes de asociar un enlace.
-No crea ni elimina victorias.
-Solo publica cambios con --publish.
+1. Busca en los historiales de los productos de los sementales.
+2. Si no encuentra una carrera, consulta los resultados de la jornada.
+3. Verifica que el ganador corresponde al caballo.
+4. No crea, elimina ni duplica victorias.
+5. Solo modifica calendar.json con --publish.
 """
 
 import argparse
 import json
 import re
 import sys
+from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import parse_qs, urljoin, urlparse
+from urllib.parse import (
+    parse_qs,
+    urlencode,
+    urljoin,
+    urlparse,
+)
 
 from auto_wins import (
     BASE,
@@ -27,6 +34,64 @@ from auto_wins import (
 )
 
 CALENDAR = Path("calendar.json")
+
+VENUES = {
+    "LA ZARZUELA": "LA ZARZUELA",
+    "MADRID": "LA ZARZUELA",
+    "SAN SEBASTIAN": "SAN SEBASTIAN",
+    "LASARTE": "SAN SEBASTIAN",
+    "DOS HERMANAS": "DOS HERMANAS",
+    "GRAN HIPODROMO DE ANDALUCIA": "DOS HERMANAS",
+    "PINEDA": "DOS HERMANAS",
+}
+
+
+def clean_name(value):
+    value = re.sub(
+        r",\s*20\d{2}$",
+        "",
+        str(value),
+    ).strip()
+
+    value = re.sub(
+        r"\s*\((FR|GB|IRE|USA|ITY|GER|SPA|ESP|POR)\)$",
+        "",
+        value,
+        flags=re.I,
+    ).strip()
+
+    return norm(value)
+
+
+def race_key(url):
+    parsed = urlparse(url)
+    params = parse_qs(parsed.query)
+
+    if not parsed.path.endswith("/resultados3.php"):
+        return None
+
+    if params.get("pais", [""])[0].upper() != "ESP":
+        return None
+
+    number = params.get("numero", [""])[0]
+    day = params.get("fecha", [""])[0][:10]
+
+    if not number or not day:
+        return None
+
+    return (day, number)
+
+
+def unique_urls(urls):
+    found = {}
+
+    for url in urls:
+        key = race_key(url)
+
+        if key:
+            found.setdefault(key, url)
+
+    return list(found.values())
 
 
 def history_results(horse_url):
@@ -52,9 +117,9 @@ def history_results(horse_url):
                 continue
 
             try:
-                race_date = datetime.strptime(
+                day = datetime.strptime(
                     cells[0].get_text(" ", strip=True),
-                    "%d/%m/%Y"
+                    "%d/%m/%Y",
                 ).date().isoformat()
             except ValueError:
                 continue
@@ -63,7 +128,10 @@ def history_results(horse_url):
                 " ", strip=True
             )
 
-            if not re.fullmatch(r"1\s*/\s*\d+", position):
+            if not re.fullmatch(
+                r"1\s*/\s*\d+",
+                position,
+            ):
                 continue
 
             anchor = cells[0].select_one(
@@ -74,16 +142,12 @@ def history_results(horse_url):
                 continue
 
             url = urljoin(BASE, anchor["href"])
-            parsed = urlparse(url)
-            params = parse_qs(parsed.query)
 
-            if params.get("pais", [""])[0].upper() != "ESP":
-                continue
-
-            results.append({
-                "date": race_date,
-                "url": url,
-            })
+            if race_key(url):
+                results.append({
+                    "date": day,
+                    "url": url,
+                })
 
         break
 
@@ -91,66 +155,282 @@ def history_results(horse_url):
 
 
 def build_index():
-    index = {}
+    index = defaultdict(list)
+    horse_ids = defaultdict(set)
     checked = set()
 
     for sire in STALLIONS:
-        for identifier, horse_url in products(sire).items():
-            if identifier in checked:
+        horses = products(sire)
+
+        for identifier, horse_url in horses.items():
+            if (sire, identifier) in checked:
                 continue
 
-            checked.add(identifier)
+            checked.add((sire, identifier))
 
             parsed = urlparse(horse_url)
-            horse_name = parse_qs(parsed.query).get(
-                "nombrecaballo", [""]
-            )[0]
+            raw_name = parse_qs(
+                parsed.query
+            ).get("nombrecaballo", [""])[0]
 
-            horse_name = re.sub(
-                r",\s*20\d{2}$", "", horse_name
-            ).strip()
+            name = clean_name(raw_name)
 
-            horse_name = re.sub(
-                r"\s*\((FR|GB|IRE|USA|ITY|GER|SPA|ESP|POR)\)$",
-                "",
-                horse_name,
-                flags=re.I
-            ).strip()
+            horse_ids[(norm(sire), name)].add(
+                identifier
+            )
 
-            for result in history_results(horse_url):
-                key = (
-                    result["date"],
-                    norm(horse_name)
+            try:
+                results = history_results(horse_url)
+            except Exception as exc:
+                print(
+                    f"AVISO HISTORIAL | {raw_name} | {exc}",
+                    flush=True,
                 )
+                continue
 
-                index.setdefault(key, []).append({
+            for result in results:
+                key = (result["date"], name)
+
+                index[key].append({
                     "url": result["url"],
                     "identifier": identifier,
-                    "stallion": sire,
+                    "stallion": norm(sire),
                 })
 
-    return index
+    print(
+        f"INDICE | caballos={len(checked)} "
+        f"claves={len(index)}",
+        flush=True,
+    )
+
+    return index, horse_ids
 
 
 def is_spanish(win):
     venue = norm(win.get("venue", ""))
     source = str(win.get("source", ""))
 
-    return (
-        source in (
-            "historical_squarespace_2026",
-            "todoturf_auto"
+    if source in (
+        "historical_squarespace_2026",
+        "todoturf_auto",
+    ):
+        return True
+
+    return any(
+        word in venue
+        for word in (
+            "ESPANA",
+            "LA ZARZUELA",
+            "MADRID",
+            "DOS HERMANAS",
+            "SAN SEBASTIAN",
+            "LASARTE",
         )
-        or "ESPANA" in venue
-        or "LA ZARZUELA" in venue
-        or "DOS HERMANAS" in venue
-        or "SAN SEBASTIAN" in venue
     )
+
+
+def venue_code(win):
+    venue = norm(win.get("venue", ""))
+
+    for key, code in VENUES.items():
+        if key in venue:
+            return code
+
+    return None
+
+
+def meeting_urls(win):
+    day = str(win.get("date", ""))
+    venue = venue_code(win)
+
+    if not venue or not re.fullmatch(
+        r"\d{4}-\d{2}-\d{2}", day
+    ):
+        return []
+
+    dates = [
+        day + " 00:00:00",
+        day,
+    ]
+
+    return [
+        BASE + "resultados2.php?" + urlencode({
+            "fecha": date_value,
+            "hipodromo": venue,
+        })
+        for date_value in dates
+    ]
+
+
+def extract_race_urls(soup, expected_day):
+    urls = []
+
+    for anchor in soup.select(
+        'a[href*="resultados3.php"]'
+    ):
+        url = urljoin(
+            BASE,
+            anchor.get("href", ""),
+        )
+
+        key = race_key(url)
+
+        if key and key[0] == expected_day:
+            urls.append(url)
+
+    return unique_urls(urls)
+
+
+def find_meeting_results(win):
+    day = str(win.get("date", ""))
+    found = []
+
+    for meeting_url in meeting_urls(win):
+        try:
+            soup = get(meeting_url)
+
+            found.extend(
+                extract_race_urls(soup, day)
+            )
+
+        except Exception as exc:
+            print(
+                f"AVISO JORNADA | {day} | {exc}",
+                flush=True,
+            )
+
+    found = unique_urls(found)
+
+    print(
+        f"JORNADA | {day} | "
+        f"{win.get('venue', '')} | "
+        f"carreras={len(found)}",
+        flush=True,
+    )
+
+    return found
+
+
+def winner_identifiers(soup):
+    """Extrae los identificadores de los ganadores
+    de la tabla de resultados.
+    """
+    winners = set()
+
+    for table in soup.find_all("table"):
+        for row in table.find_all("tr"):
+            cells = row.find_all("td")
+
+            if len(cells) < 2:
+                continue
+
+            position = cells[0].get_text(
+                " ", strip=True
+            )
+
+            if position != "1":
+                continue
+
+            for anchor in cells[1].select("a[href]"):
+                result = horse_link(anchor)
+
+                if result:
+                    _, identifier = result
+                    winners.add(identifier)
+
+    return winners
+
+
+def verified_from_index(win, index):
+    key = (
+        str(win.get("date", "")),
+        clean_name(win.get("horse", "")),
+    )
+
+    sire = norm(win.get("stallion", ""))
+    candidates = index.get(key, [])
+    valid = []
+
+    for candidate in candidates:
+        if candidate["stallion"] != sire:
+            continue
+
+        try:
+            verify_result(
+                candidate,
+                candidate["identifier"],
+            )
+
+            valid.append(candidate["url"])
+
+        except Exception as exc:
+            print(
+                f"NO VERIFICADO HISTORIAL | "
+                f"{win.get('horse')} | {exc}",
+                flush=True,
+            )
+
+    return unique_urls(valid)
+
+
+def verified_from_meeting(win, horse_ids):
+    sire = norm(win.get("stallion", ""))
+    name = clean_name(win.get("horse", ""))
+
+    identifiers = horse_ids.get(
+        (sire, name), set()
+    )
+
+    if not identifiers:
+        print(
+            f"SIN IDENTIFICADOR | "
+            f"{win.get('horse')} | {sire}",
+            flush=True,
+        )
+        return []
+
+    valid = []
+
+    for url in find_meeting_results(win):
+        try:
+            soup = get(url)
+            winners = winner_identifiers(soup)
+
+            matching = winners.intersection(
+                identifiers
+            )
+
+            if not matching:
+                continue
+
+            # Verificación adicional mediante
+            # la función existente.
+            for identifier in matching:
+                verify_result(
+                    {"url": url},
+                    identifier,
+                )
+
+                valid.append(url)
+                break
+
+        except Exception as exc:
+            print(
+                f"AVISO VERIFICACION | {url} | {exc}",
+                flush=True,
+            )
+
+    return unique_urls(valid)
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--publish", action="store_true")
+
+    parser.add_argument(
+        "--publish",
+        action="store_true",
+    )
+
     args = parser.parse_args()
 
     data = json.loads(
@@ -160,7 +440,9 @@ def main():
     wins = data.get("wins", [])
 
     if not isinstance(wins, list):
-        raise ValueError("wins debe ser una lista")
+        raise ValueError(
+            "wins debe ser una lista"
+        )
 
     pending = [
         win for win in wins
@@ -174,72 +456,81 @@ def main():
 
     print(
         f"VICTORIAS PENDIENTES | {len(pending)}",
-        flush=True
+        flush=True,
     )
 
     if not pending:
         print("SIN CAMBIOS", flush=True)
         return
 
-    index = build_index()
+    index, horse_ids = build_index()
+
     changes = 0
+    matched = 0
+    unmatched = 0
 
     for win in pending:
-        horse = win.get("horse", "")
-        day = win.get("date", "")
-        sire = norm(win.get("stallion", ""))
+        horse = str(win.get("horse", ""))
+        day = str(win.get("date", ""))
 
-        key = (day, norm(horse))
-        candidates = index.get(key, [])
+        print(
+            f"REVISANDO | {horse} | {day}",
+            flush=True,
+        )
 
-        valid_urls = []
+        valid = verified_from_index(
+            win, index
+        )
 
-        for candidate in candidates:
-            if norm(candidate["stallion"]) != sire:
-                continue
+        # Segunda búsqueda cuando el historial
+        # no ofrece una coincidencia única.
+        if len(valid) != 1:
+            fallback = verified_from_meeting(
+                win, horse_ids
+            )
 
-            try:
-                verify_result(
-                    candidate,
-                    candidate["identifier"]
-                )
-                valid_urls.append(candidate["url"])
-            except Exception as exc:
-                print(
-                    f"NO VERIFICADO | {horse} | {exc}",
-                    flush=True
-                )
+            valid = unique_urls(
+                valid + fallback
+            )
 
-        valid_urls = list(dict.fromkeys(valid_urls))
+        if len(valid) != 1:
+            unmatched += 1
 
-        # Nunca asociar una carrera ambigua.
-        if len(valid_urls) != 1:
             print(
-                f"SIN COINCIDENCIA ÚNICA | {horse} | "
-                f"{day} | opciones={len(valid_urls)}",
-                flush=True
+                f"SIN COINCIDENCIA UNICA | "
+                f"{horse} | {day} | "
+                f"opciones={len(valid)}",
+                flush=True,
             )
             continue
 
-        result_url = valid_urls[0]
-
-        # No sustituir enlaces existentes a otra carrera.
+        result_url = valid[0]
         existing_url = win.get("url", "")
 
-        if existing_url and existing_url != result_url:
-            print(
-                f"CONFLICTO DE ENLACE | {horse} | {day}",
-                flush=True
-            )
-            continue
+        # Comparamos la identidad de la carrera,
+        # no solo el formato de la URL.
+        if existing_url:
+            if race_key(existing_url) != race_key(
+                result_url
+            ):
+                print(
+                    f"CONFLICTO DE ENLACE | "
+                    f"{horse} | {day}",
+                    flush=True,
+                )
+                unmatched += 1
+                continue
+
+        matched += 1
 
         if not existing_url:
             win["url"] = result_url
             changes += 1
 
             print(
-                f"RESULTADOS | {horse} | {result_url}",
-                flush=True
+                f"RESULTADOS | {horse} | "
+                f"{result_url}",
+                flush=True,
             )
 
         if not win.get("video_url"):
@@ -250,19 +541,25 @@ def main():
                 changes += 1
 
                 print(
-                    f"REPETICION | {horse} | {video}",
-                    flush=True
+                    f"REPETICION | {horse} | "
+                    f"{video}",
+                    flush=True,
                 )
 
     print(
-        f"RESUMEN | campos actualizados={changes}",
-        flush=True
+        f"RESUMEN | "
+        f"victorias_pendientes={len(pending)} "
+        f"coincidencias={matched} "
+        f"sin_coincidencia={unmatched} "
+        f"campos_actualizados={changes}",
+        flush=True,
     )
 
     if not args.publish:
         print(
-            "MODO PRUEBA | No se modifica calendar.json",
-            flush=True
+            "MODO PRUEBA | "
+            "No se modifica calendar.json",
+            flush=True,
         )
         return
 
@@ -275,21 +572,25 @@ def main():
             json.dumps(
                 data,
                 ensure_ascii=False,
-                indent=2
+                indent=2,
             ) + "\n",
-            encoding="utf-8"
+            encoding="utf-8",
         )
 
-    print("PROCESO COMPLETADO", flush=True)
+    print(
+        "PROCESO COMPLETADO",
+        flush=True,
+    )
 
 
 if __name__ == "__main__":
     try:
         main()
+
     except Exception as exc:
         print(
             "ERROR: " + str(exc),
             file=sys.stderr,
-            flush=True
+            flush=True,
         )
         sys.exit(1)
