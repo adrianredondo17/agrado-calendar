@@ -35,6 +35,36 @@
       "number": "7",
       "url": "https://www.todoturf.net/programa3.php?numero=238&fecha=2026-11-29 00:00:00&pais=ESP&tipo=LISO",
       "status": "confirmed"
+    },
+    {
+      "date": "2026-11-29",
+      "horse": "MORTIROLO",
+      "stallion": "BOW CREEK",
+      "race": "Premio CEFERINO CARRASCO (POTROS)",
+      "jockey": "I. MELGAREJO",
+      "number": "9",
+      "url": "https://www.todoturf.net/programa3.php?numero=234&fecha=2026-11-29 00:00:00&pais=ESP&tipo=LISO",
+      "status": "confirmed"
+    },
+    {
+      "date": "2026-11-29",
+      "horse": "ANOTHER ROSE",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Premio MARCOS CARRASCO",
+      "jockey": "V. JANACEK",
+      "number": "1",
+      "url": "https://www.todoturf.net/programa3.php?numero=237&fecha=2026-11-29 00:00:00&pais=ESP&tipo=LISO",
+      "status": "confirmed"
+    },
+    {
+      "date": "2026-11-29",
+      "horse": "ASAHI",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Premio MARCOS CARRASCO",
+      "jockey": "J.C. DIESTRA",
+      "number": "7",
+      "url": "https://www.todoturf.net/programa3.php?numero=237&fecha=2026-11-29 00:00:00&pais=ESP&tipo=LISO",
+      "status": "confirmed"
     }
   ],
   "wins": [
@@ -239,5 +269,5 @@
       "video_url": "https://www.todoturf.net/videocarrera.php?numero=212&fecha=2026-11-01 00:00:00&pais=ESP&tipo=LISO"
     }
   ],
-  "lastUpdated": "2026-11-23T13:02:19.028214+00:00"
+  "lastUpdated": "2026-11-24T13:02:32.758110+00:00"
 }
