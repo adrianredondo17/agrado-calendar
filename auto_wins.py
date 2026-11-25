@@ -372,4 +372,80 @@ def main():
         CALENDAR.write_text(json.dumps(calendar,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     else: print('MODO PRUEBA | No se modifica calendar.json',flush=True)
 
+def verify_result(candidate, horse_identifier):
+    url = candidate["url"]
+    soup = get(url)
+
+    heading = soup.find(
+        lambda tag:
+            tag.name in (
+                "h1", "h2", "h3", "h4", "h5"
+            )
+            and "PREMIO" in norm(
+                tag.get_text(" ", strip=True)
+            )
+    )
+
+    if heading is None:
+        raise RuntimeError(
+            "Premio no identificado: " + url
+        )
+
+    race = heading.get_text(
+        " ",
+        strip=True
+    )
+
+    race = re.sub(
+        r"^Premio\s+",
+        "",
+        race,
+        flags=re.I
+    ).strip()
+
+    verified = False
+
+    for table in soup.find_all("table"):
+        rows = table.find_all("tr")
+
+        for tr in rows:
+            cells = tr.find_all("td")
+
+            if len(cells) < 2:
+                continue
+
+            place = cells[0].get_text(
+                " ",
+                strip=True
+            )
+
+            if place != "1":
+                continue
+
+            anchor = next(
+                (
+                    a for a in cells[1].select("a[href]")
+                    if horse_link(a)
+                ),
+                None
+            )
+
+            if anchor:
+                _, winner_id = horse_link(anchor)
+
+                if winner_id == horse_identifier:
+                    verified = True
+                    break
+
+        if verified:
+            break
+
+    if not verified:
+        raise RuntimeError(
+            "No se pudo verificar el ganador: "
+            + url
+        )
+
+    return race
+
 if __name__=='__main__': main()
