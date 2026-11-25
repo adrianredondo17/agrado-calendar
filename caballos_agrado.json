@@ -1,0 +1,4299 @@
+[
+  {
+    "horse": "ACE IMPACT",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "CRACKSMAN"
+    ],
+    "dams": [],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "ACHTUNG",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "Sulamani"
+    ],
+    "dams": [
+      "Aurea"
+    ],
+    "birth_years": []
+  },
+  {
+    "horse": "ADECA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "OASIS DREAM"
+    ],
+    "dams": [
+      "ALLOWAY"
+    ],
+    "birth_years": [
+      "2009"
+    ]
+  },
+  {
+    "horse": "AGRIPA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "HOT STREEK"
+    ],
+    "dams": [
+      "CHACARITA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "AHURA MAZDA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "PROFITABLE"
+    ],
+    "dams": [
+      "WINDY CITI"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "AL WUKAIR",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [],
+    "dams": [],
+    "birth_years": []
+  },
+  {
+    "horse": "ALABAMA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ULTRA"
+    ],
+    "dams": [
+      "AIMANTE"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "ALCAIDESA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "SEA THE MOON"
+    ],
+    "dams": [
+      "MICHITA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "ALCEDIMZOE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "TERRITORIES"
+    ],
+    "dams": [
+      "GRACE OF DUBAI"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "ALDUFOOF",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "BATED BREATH (GB)"
+    ],
+    "dams": [
+      "MOQLA"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "ALL IS ONE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "REDOUTES CHOICE"
+    ],
+    "dams": [
+      "ALL IS VANITY"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "ALWIN BRAM",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "BRAMETOT"
+    ],
+    "dams": [
+      "A WINING DREAM"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "AMAYITA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "NATHANIEL"
+    ],
+    "dams": [
+      "MIX AND MINGLE"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "AMIL",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ATTENDU"
+    ],
+    "dams": [
+      "BARBAYAM"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "ANDIA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CAPE CROSS"
+    ],
+    "dams": [
+      "SPIRITOFTHEUNION"
+    ],
+    "birth_years": [
+      "2016"
+    ]
+  },
+  {
+    "horse": "ARCO OF STARS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "CLOTH OF STARS"
+    ],
+    "dams": [
+      "SO LIKE YOUR MOVES"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "ARISTOCRATA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "VAN BEETHOVEN"
+    ],
+    "dams": [
+      "FIESTA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "ARQUETU",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "HIGHLAND REEL"
+    ],
+    "dams": [
+      "INTAPEACE"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "ARRIGUNAGA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DOCTOR DINO"
+    ],
+    "dams": [
+      "CATTIVA"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "ARTESA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MEDICIS"
+    ],
+    "dams": [
+      "PAS LE TEMPS"
+    ],
+    "birth_years": [
+      "2010"
+    ]
+  },
+  {
+    "horse": "ASIAN CREEK",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CRACKSMAN"
+    ],
+    "dams": [
+      "AMCHITZA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "ATEGORRIETA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "RIP VAN WINKLE"
+    ],
+    "dams": [
+      "ABRIL"
+    ],
+    "birth_years": [
+      "2015"
+    ]
+  },
+  {
+    "horse": "ATOUGUIA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "GUTAIFAN"
+    ],
+    "dams": [
+      "APRADA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "ATTICUS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "SOMMERABEND"
+    ],
+    "dams": [
+      "SUNSET FILLY"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "AUSTRALIAN DREAMER",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "AUSTRALIA"
+    ],
+    "dams": [
+      "DELTA DREAMER"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "BALKIRYA",
+    "categories": [
+      "Yearling > 1 año"
+    ],
+    "sires": [
+      "BAY BRIDGE"
+    ],
+    "dams": [
+      "EBALVIYRA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "BALOOK",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "SEA THE MOON"
+    ],
+    "dams": [
+      "STAGE QUEEN"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "BARBARIGO",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "CANFORD CLIFFS"
+    ],
+    "dams": [
+      "LALY MUTT"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "BAYSIDE BOY",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "NEW BAY"
+    ],
+    "dams": [],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "BEAU GEST DE CERES",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "MAKALOUN"
+    ],
+    "dams": [
+      "DITREVILE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "BELEÑA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "LIGHTNING MOON"
+    ],
+    "dams": [
+      "FIESTA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "BELISA BAY",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "BAYSIDE BOY"
+    ],
+    "dams": [
+      "BELISA DE VEGA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "BELLA LUCE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "BATED BREATH (GB)"
+    ],
+    "dams": [
+      "BELLA LUCE"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "BELLE LUCHY",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "BIRCHWOOD"
+    ],
+    "dams": [
+      "LADY SPIRIT"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "BELLETTI",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "BELARDO"
+    ],
+    "dams": [
+      "INTRIGUE"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "BELLUNEZA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DABIRSIM"
+    ],
+    "dams": [
+      "SIRERITA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "BENALMADENA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "SPACE BLUES"
+    ],
+    "dams": [
+      "FOREST VIEW"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "BIELVA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CHARM SPIRIT"
+    ],
+    "dams": [
+      "FAIRY EFISIO"
+    ],
+    "birth_years": [
+      "2008"
+    ]
+  },
+  {
+    "horse": "BIGGER STAR",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ADVERTISE"
+    ],
+    "dams": [
+      "BAZZANA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "BLONDY",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "LINDA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "BLUE SPARROW",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "SPACE BLUES"
+    ],
+    "dams": [
+      "ELEGANTE BERE"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "BOLONIA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "CAPICUA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "BOREA DE KERSER",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "FREEDOM CRY"
+    ],
+    "dams": [
+      "AUREA TREMP"
+    ],
+    "birth_years": [
+      "2011"
+    ]
+  },
+  {
+    "horse": "BOW CREEK",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "SHAMARDAL"
+    ],
+    "dams": [
+      "BENEVENTA"
+    ],
+    "birth_years": [
+      "2011"
+    ]
+  },
+  {
+    "horse": "BRAVAYA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MASTERCRAFTSMAN"
+    ],
+    "dams": [
+      "BARBADE"
+    ],
+    "birth_years": [
+      "2016"
+    ]
+  },
+  {
+    "horse": "BRISAS",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DARK ANGEL"
+    ],
+    "dams": [
+      "SCOTH BONNET"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "BRUMA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "PNYX"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "BUKANAN",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BLACKBEARD"
+    ],
+    "dams": [
+      "ANJOLIE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "CABALLUCU",
+    "categories": [
+      "Recela"
+    ],
+    "sires": [],
+    "dams": [
+      "SONKO"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "CACCIA DI DIANA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "RECOLETOS"
+    ],
+    "dams": [
+      "ERCOLINI"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "CAPICUA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ROYAL APPLAUSE"
+    ],
+    "dams": [
+      "AGATA LAGUNA"
+    ],
+    "birth_years": [
+      "2013"
+    ]
+  },
+  {
+    "horse": "CARBAYON",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "TORONADO"
+    ],
+    "dams": [
+      "HONEYMOON TRIP"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "CARLETTO",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "ANDIA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "CASILDA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "LA COPA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "CATSKILL FLYER",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "RIP VAN WINKLE"
+    ],
+    "dams": [
+      "TRAPEZE"
+    ],
+    "birth_years": [
+      "2015"
+    ]
+  },
+  {
+    "horse": "CELLAC",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CELTIC ROCK"
+    ],
+    "dams": [
+      "LA CHATA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "CHARM SPIRIT",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [],
+    "dams": [],
+    "birth_years": []
+  },
+  {
+    "horse": "CHARMING LOOK",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CHARMING THOUGHT"
+    ],
+    "dams": [
+      "FINIDAPREST"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "CHEESECAKE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "PANTXINETA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "CHIQUITIN",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "STUDY OF MAN"
+    ],
+    "dams": [
+      "SPRING TO MING"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "CITY LIGHT",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [],
+    "dams": [],
+    "birth_years": []
+  },
+  {
+    "horse": "CLORI",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "COTAI GLORY"
+    ],
+    "dams": [
+      "KANDYKAINE"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "CRACKON",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "CRACKSMAN"
+    ],
+    "dams": [
+      "THAAHIRA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "CREDIT CREEK",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "IHSAS"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "CRUMBLECREEK",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SIR PRANCEALOT"
+    ],
+    "dams": [
+      "LARKFIELD EMPRESS"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "CRYSTAL HEAD",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "BANNABY"
+    ],
+    "dams": [
+      "SUNSET FILLY"
+    ],
+    "birth_years": [
+      "2015"
+    ]
+  },
+  {
+    "horse": "CUDON",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ARAAFA"
+    ],
+    "dams": [
+      "COURTLANDT QUEEN"
+    ],
+    "birth_years": [
+      "2008"
+    ]
+  },
+  {
+    "horse": "DARING",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "BELLUNEZA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "DARISSA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ELZAAM"
+    ],
+    "dams": [
+      "SKIPPING BAIL"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "DE PAREDES",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "TRASTAMARA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "DIAS FELICES",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "DREAM AHEAD"
+    ],
+    "dams": [
+      "BARREDA"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "DIEULEFIT",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "OASIS DREAM"
+    ],
+    "dams": [
+      "TERESCHENKO"
+    ],
+    "birth_years": [
+      "2015"
+    ]
+  },
+  {
+    "horse": "DIVA VICTORIA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "RECORDER"
+    ],
+    "dams": [
+      "RAWYA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "DJIANGO",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "CLOTH OF STARS"
+    ],
+    "dams": [
+      "MY CITY CHARLIE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "DSCHINGIS PRINCESS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "DSCHINGIS SECRET"
+    ],
+    "dams": [
+      "PRISTINA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "DUCKMORE BAY",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "TITUS LIVIUS"
+    ],
+    "dams": [
+      "OKINO"
+    ],
+    "birth_years": [
+      "2000"
+    ]
+  },
+  {
+    "horse": "DUENDECILLO",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "VISINDAR"
+    ],
+    "dams": [
+      "CHLOE"
+    ],
+    "birth_years": [
+      "2010"
+    ]
+  },
+  {
+    "horse": "DUQUESA BLANCA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "STARMAN"
+    ],
+    "dams": [
+      "SOLAR HALO"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "DYLANESQUE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ROYAL APLAUSE"
+    ],
+    "dams": [
+      "VENTURA HIGHWAY"
+    ],
+    "birth_years": [
+      "2016"
+    ]
+  },
+  {
+    "horse": "EBALVIYRA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ANABAA"
+    ],
+    "dams": [
+      "EBAREVA"
+    ],
+    "birth_years": [
+      "2009"
+    ]
+  },
+  {
+    "horse": "EL GRAN SOL",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "MAKE BELIEVE"
+    ],
+    "dams": [
+      "HALLOWED PARK"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "EL SOKHNA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "DRAGON PULSE"
+    ],
+    "dams": [
+      "MADAM MACIE"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "ELZAAM",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "Redoutes choice"
+    ],
+    "dams": [
+      "Mambo in Freeport"
+    ],
+    "birth_years": []
+  },
+  {
+    "horse": "ESCILA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CARDOUN"
+    ],
+    "dams": [
+      "CASTALIA"
+    ],
+    "birth_years": [
+      "2013"
+    ]
+  },
+  {
+    "horse": "ESTRAUNZA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "LE HAVRE"
+    ],
+    "dams": [
+      "TSARINE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "FASHIONATA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "FAST COMPANY"
+    ],
+    "dams": [
+      "RE RED ROSE"
+    ],
+    "birth_years": [
+      "2013"
+    ]
+  },
+  {
+    "horse": "FLICKA",
+    "categories": [
+      "Yearling > 1 año"
+    ],
+    "sires": [
+      "FLINTSHIRE"
+    ],
+    "dams": [
+      "HIGH BROOKLYN"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "FREEKEL",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FREE EAGLE"
+    ],
+    "dams": [
+      "MARJUBILATION"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "GALDANA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "RIP VAN WINKLE"
+    ],
+    "dams": [
+      "HASBROWN"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "GAUCIN",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ELARQAM"
+    ],
+    "dams": [
+      "PRIDE DANCER"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "GELINOTTE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "NANDO PARRADO"
+    ],
+    "dams": [
+      "FYNBOS"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "GIMME LOVE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "TEN SOVEREIGNS"
+    ],
+    "dams": [
+      "SPANISH ARIA"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "GLENEAGLES",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "GALILEO"
+    ],
+    "dams": [
+      "YOU´RESOTHRILLING"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "GOKEN",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "KENDARGENT"
+    ],
+    "dams": [
+      "GOOSELEY CHOPE"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "GRAN BELGA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "TIME TEST"
+    ],
+    "dams": [
+      "IMPERIALISTIC"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "GRAZALEMA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "CRACKSMAN"
+    ],
+    "dams": [
+      "SMILLING BLUE EYES"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "GUADAIZA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BANNABY"
+    ],
+    "dams": [
+      "GALDANA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "GUADALMANSA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MAKE BELIEVE"
+    ],
+    "dams": [
+      "AUXILIA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "HABANERO",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "ZAMBEZIE"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "HACKNEY ROAD",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "AQLAAM"
+    ],
+    "dams": [
+      "WEST LORNE"
+    ],
+    "birth_years": [
+      "2013"
+    ]
+  },
+  {
+    "horse": "HEADING TO MOPTI",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "NEW APPROACH"
+    ],
+    "dams": [
+      "GARALA"
+    ],
+    "birth_years": [
+      "2017"
+    ]
+  },
+  {
+    "horse": "HELIOPOLIS",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ANODIN"
+    ],
+    "dams": [
+      "SACREE NANA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "HIGH BROOKLYN",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "HIGH CHAPARRAL"
+    ],
+    "dams": [
+      "BROOKLYN ACADEMY"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "HIGHDARK BLUE",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "DARIYAN"
+    ],
+    "dams": [
+      "HIGH BROOKLYN"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "HONEYMOON TRIP",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MYBOYCHARLIE"
+    ],
+    "dams": [
+      "HELSINKA"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "HORIZON",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ALSON"
+    ],
+    "dams": [
+      "SANDY LEGEND"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "INTERROGATION",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "XALUNA BAY"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "ISMENE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ECTOT"
+    ],
+    "dams": [
+      "METIS"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "ITSMENTAL",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "MINZAAL"
+    ],
+    "dams": [
+      "UPSTANDING"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "JONAHS LAD",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FRENCH FIFTEEN"
+    ],
+    "dams": [
+      "KOLINKA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "KAMARA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "FREE EAGLE"
+    ],
+    "dams": [
+      "CAPSAICIN"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "KANICA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "MESTIZO"
+    ],
+    "dams": [
+      "MESTIZA"
+    ],
+    "birth_years": [
+      "2005"
+    ]
+  },
+  {
+    "horse": "KAVANA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "MOHHATHER"
+    ],
+    "dams": [
+      "PERFECT COUNTRY"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "KEMMA",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "KENDAYA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "KENDAYA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "FREE EAGLE"
+    ],
+    "dams": [
+      "CAPSAICIN"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "KERA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ISFAHAN"
+    ],
+    "dams": [
+      "KÖNIGIN CONCORDE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "KIA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "AMIL"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "KILDARE LEGEND",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "SEA THE STARS"
+    ],
+    "dams": [
+      "MISS AIGLONNE"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "KING OF JUNGLE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "BUNGLE INTHEJUNGLE"
+    ],
+    "dams": [
+      "AYR MISILE"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "KING OF STEEL",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "WOOTTON BASSETT"
+    ],
+    "dams": [
+      "ELDACAR"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "KOWALSKY",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ANODIN"
+    ],
+    "dams": [
+      "PICAYUNE"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "KRASNEY BOR",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "INVINCIBLE ARMY"
+    ],
+    "dams": [
+      "INTOLERANCE"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "LA BOPPERIA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DYHIM DIAMOND"
+    ],
+    "dams": [
+      "KATHERINE"
+    ],
+    "birth_years": [
+      "2010"
+    ]
+  },
+  {
+    "horse": "LA CUESTA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SHOWCASING"
+    ],
+    "dams": [
+      "DOWAGER"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "LA EMPERATRIZ",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "INVINCIBLE SPIRIT"
+    ],
+    "dams": [
+      "PERSONA GRATA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "LA GOBERNADORA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "HALLING"
+    ],
+    "dams": [
+      "CYCLONE CONNIE"
+    ],
+    "birth_years": [
+      "2009"
+    ]
+  },
+  {
+    "horse": "LA PRUNELLE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "HELLO YOUMZAIN"
+    ],
+    "dams": [
+      "PARIS BEAUTY"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "LA SHANA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "SEALIWAY"
+    ],
+    "dams": [
+      "ARCH OF COLOURS"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "LADY ASANTE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "CLOTH OF STARS"
+    ],
+    "dams": [
+      "WHEELS OF LOVE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "LADY MOON",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "LIGHTNING MOON"
+    ],
+    "dams": [
+      "QUEENROSE"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "LAS FALLAS",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MOTIVATOR"
+    ],
+    "dams": [
+      "FIESTA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "LEIVINHA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MAKE BELIEVE"
+    ],
+    "dams": [
+      "MAIDIN MAITH"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "LEYHAIMUR",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "PINATUBO"
+    ],
+    "dams": [
+      "DABYAH"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "LINDA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "HUNTERS LIGHT"
+    ],
+    "dams": [
+      "LOLITA PLUMA"
+    ],
+    "birth_years": [
+      "2017"
+    ]
+  },
+  {
+    "horse": "MACADAMIA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "KARLUV MOST"
+    ],
+    "dams": [
+      "GALDANA"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "MACARIO",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ZELZAL"
+    ],
+    "dams": [
+      "DIEULEFIT"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "MACHU PICCHU",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ARKAITZ"
+    ],
+    "dams": [
+      "LAURA MOON"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "MADAME CARACOL",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "ZAMBEZIE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "MAJESTIC BROTHER",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "EARTHLIGHT"
+    ],
+    "dams": [
+      "PORTO ROMANO"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "MAKA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "FORMENTERA"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "MAMBO",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GOLDEN HORN"
+    ],
+    "dams": [
+      "CITRONELLA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "MEDIANOCHE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "KOOL COMPANY"
+    ],
+    "dams": [
+      "HISPANA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "MINI GEORGE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "PERSIAN KING"
+    ],
+    "dams": [
+      "LA FEE VERTE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "MITRA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CARADAK"
+    ],
+    "dams": [
+      "ORLETTA"
+    ],
+    "birth_years": [
+      "2010"
+    ]
+  },
+  {
+    "horse": "MORE THAN A WOMAN",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "MUHAARAR"
+    ],
+    "dams": [
+      "CAPICUA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "MORTIROLO",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "ZAMBEZIE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "MR REDBREAST",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ELZAAM"
+    ],
+    "dams": [
+      "PLACE THAT FACE"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "MUHAARAR",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "Oasis Dream"
+    ],
+    "dams": [
+      "Tahrir"
+    ],
+    "birth_years": []
+  },
+  {
+    "horse": "MUSIQUE SACREE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DOCTOR DINO"
+    ],
+    "dams": [
+      "PEINTRE CELESTE"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "MYSTERY CREEK",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "STARLIGHT MYSTERY"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N24 WELL AND TRULY",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "SEA THE MOON"
+    ],
+    "dams": [
+      "WELL AND TRULY"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "N25 ALL IS ONE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GOKEN"
+    ],
+    "dams": [
+      "ALL IS ONE"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 ALMAHROOSA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "VAN BEETHOVEN"
+    ],
+    "dams": [
+      "ALMAHROOSA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 ARRIGUNAGA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "RULER OF THE WORLD"
+    ],
+    "dams": [
+      "ARRIGUNAGA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 BELLUNEZA",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "ELZAAM"
+    ],
+    "dams": [
+      "BELLUNEZA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 CELLAC",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "ACHTUNG"
+    ],
+    "dams": [
+      "CELLAC"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 CIBELES",
+    "categories": [
+      "Yearling > 1 año"
+    ],
+    "sires": [
+      "RULER OF THE WORLD"
+    ],
+    "dams": [
+      "CIBELES"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 CRUMBLECREEK",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "RULER OF THE WORLD"
+    ],
+    "dams": [
+      "CRUMBLECREEK"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 DACESA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "SHAMAN"
+    ],
+    "dams": [
+      "DACESA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 DIEULEFIT",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "ELZAAM"
+    ],
+    "dams": [
+      "DIEULEFIT"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 FRAU ANNA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "SEA THE MOON"
+    ],
+    "dams": [
+      "Frau Anna"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 GALDANA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ELZAAM"
+    ],
+    "dams": [
+      "GALDANA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 GOLCONDE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GALIWAY"
+    ],
+    "dams": [
+      "GOLCONDE"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 GUANA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GOOD GUESS"
+    ],
+    "dams": [
+      "GUANA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 HOLD ON NOW",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "INTELLO"
+    ],
+    "dams": [
+      "HOLD ON NOW"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 LADY MOON",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "LADY MOON"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 LINDA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "LINDA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 MING ZHI COSMOS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ONESTO"
+    ],
+    "dams": [
+      "MING ZHI COSMOS"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 MITRA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "MITRA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 MOCASSIN",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "MUHAARAR"
+    ],
+    "dams": [
+      "MOCASSIN"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 MUSIQUE SACREE",
+    "categories": [
+      "Pretraining",
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "MUSIQUE SACREE"
+    ],
+    "birth_years": [
+      "2025",
+      "2024"
+    ]
+  },
+  {
+    "horse": "N25 NIAGARA FALLS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "NIAGARA FALLS"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 PALACE PRINCESS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "CITY LIGHT"
+    ],
+    "dams": [
+      "PALACE PRINCESS"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 PREMIERE RHAPSODIE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ROMANISED"
+    ],
+    "dams": [
+      "PREMIER RHAPSODIE"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 PRETTY STRANGE",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "CHARM SPIRIT"
+    ],
+    "dams": [
+      "PRETTY STRANGE"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 QUILLA MOON",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "INTELLO"
+    ],
+    "dams": [
+      "QUILLA MOON"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 SAMAY",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "RULER OF THE WORLD"
+    ],
+    "dams": [
+      "SAMAY"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 SILEEL",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "HELLO YOUMZAIN"
+    ],
+    "dams": [
+      "SILEEL"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 STELLE DI MARE",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "HELLO YOUMZAIN"
+    ],
+    "dams": [
+      "STELLE DI MARE"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N25 SUDAFRICA",
+    "categories": [
+      "Yearling > 1 año"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "SUDAFRICA"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "N26 AMAYITA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "AMAYITA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 ATEGORRIETA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "BAYSIDE BOY"
+    ],
+    "dams": [
+      "ATEGORRIETA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 BELEÑA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "AL WUKAIR"
+    ],
+    "dams": [
+      "BELEÑA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 BRAVAYA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "CITY LIGHT"
+    ],
+    "dams": [
+      "BRAVAYA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 CAPICUA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "CAPICUA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 CHARMING LOOK",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "RULER OF THE WORLD"
+    ],
+    "dams": [
+      "CHARMING LOOK"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 FASHIONATA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "FASHIONATA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 GALDANA",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "RODABALLO"
+    ],
+    "dams": [
+      "GALDANA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 LADY MOON",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "LADY MOON"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 QUINCHIA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "QUINCHIA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 SAMAY",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "RODABALLO"
+    ],
+    "dams": [
+      "SAMAY"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 SCANDALOUS",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "CHARM SPIRIT"
+    ],
+    "dams": [
+      "SCANDALOUS"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 TRASTAMARA",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "RULER OF THE WORLD"
+    ],
+    "dams": [
+      "TRASTAMARA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "N26 WAKKANDA",
+    "categories": [
+      "Foal >2 meses"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "WAKKANDA"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "NARANCO",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "KINGMAN"
+    ],
+    "dams": [
+      "PATSY BOYNE"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "NASAB",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "RIBCHESTER"
+    ],
+    "dams": [
+      "NAWAASY"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "NOOZHOH CANARIAS",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "CARADAK"
+    ],
+    "dams": [
+      "NOOZHAH"
+    ],
+    "birth_years": [
+      "2011"
+    ]
+  },
+  {
+    "horse": "NOSY BE DU MAZET",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "LAWMAN"
+    ],
+    "dams": [
+      "HALLOTIERE"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "OCZIDENTAL",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ORIENTAL"
+    ],
+    "dams": [
+      "OLZA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "OLD SUMMIT",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "Brave Prospector"
+    ],
+    "dams": [
+      "Portrait"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "ORION",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "GOOD MORNING STAR"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "ORLOV",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "Luna Ridge"
+    ],
+    "dams": [
+      "Honor a Hannah"
+    ],
+    "birth_years": [
+      "2006"
+    ]
+  },
+  {
+    "horse": "PACMAN",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "TRECE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "PANTXINETA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "NOOZHOH CANARIAS"
+    ],
+    "dams": [
+      "GOOD MORNING STAR"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "PEACH BLOSSOM",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GALILEO GOLD"
+    ],
+    "dams": [
+      "HOLD ON NOW"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "PEARL WAR STORM",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "TRADE STORM"
+    ],
+    "dams": [
+      "PEARL WAR"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "PENRHEAD",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DREAM AHEAD"
+    ],
+    "dams": [
+      "PENORKA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "PEREJIL",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "CITY LIGHT"
+    ],
+    "dams": [
+      "DARMADA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "PERSIAN KING",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "KINGMAN"
+    ],
+    "dams": [
+      "PRETTY PLEASE"
+    ],
+    "birth_years": []
+  },
+  {
+    "horse": "PLACIDOO",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "INNST OF COURT"
+    ],
+    "dams": [
+      "NATHALIE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "POLCHECA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "POLAN"
+    ],
+    "dams": [
+      "SLINKY"
+    ],
+    "birth_years": [
+      "2005"
+    ]
+  },
+  {
+    "horse": "POWER AND PEACE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ARCANO"
+    ],
+    "dams": [
+      "DUBAI POWER"
+    ],
+    "birth_years": [
+      "2015"
+    ]
+  },
+  {
+    "horse": "PRETTY FACE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "WHITE KING"
+    ],
+    "dams": [
+      "ARQUETU"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "PRETTY HOLE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SOLDIER OF FORTUNE"
+    ],
+    "dams": [
+      "DORAQ"
+    ],
+    "birth_years": [
+      "2012"
+    ]
+  },
+  {
+    "horse": "PRETTY ROSE",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "PRETTY STRANGE"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "PRETTY STRANGE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SIYOUNI"
+    ],
+    "dams": [
+      "SHANGAI NOON"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "QUEEN´S REQUEST",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SAXON WARRIOR"
+    ],
+    "dams": [
+      "SEA YOUMZAIN"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "QUICK AMEDEO",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "AMEDEO MODIGLIANI"
+    ],
+    "dams": [
+      "QUICK ARTIST"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "QUICK ARTIST",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DUTCH ART"
+    ],
+    "dams": [
+      "ESCELLERATOR"
+    ],
+    "birth_years": [
+      "2014"
+    ]
+  },
+  {
+    "horse": "QUICK AURORA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "CELTIC ROCK"
+    ],
+    "dams": [
+      "QUICK ARTIST"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "QUICK NOAH",
+    "categories": [
+      "Yearling pre subasta"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "QUICK ARTIST"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "QUICK TO DECIDE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "BATED BREATH"
+    ],
+    "dams": [
+      "ZA ZA ZOOM"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "QUILES",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "MASSAAT"
+    ],
+    "dams": [
+      "DACESA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "QUINCHIA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CAMACHO"
+    ],
+    "dams": [
+      "KANDYKAINE"
+    ],
+    "birth_years": [
+      "2016"
+    ]
+  },
+  {
+    "horse": "QUINZE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "FRENCH FIFTEEN"
+    ],
+    "dams": [
+      "TRECE"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "QUIZAS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "THUNDER MOON"
+    ],
+    "dams": [
+      "TIHANNA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "RANA CHOP",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GUTAIFAN"
+    ],
+    "dams": [
+      "SWEET TO REMEMBER"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "RANYAN",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "GOLD AWAY"
+    ],
+    "dams": [
+      "TRIPLE TWO"
+    ],
+    "birth_years": [
+      "2009"
+    ]
+  },
+  {
+    "horse": "RED NAOMI",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "TAMAYUZ"
+    ],
+    "dams": [
+      "DUTCH ROSE"
+    ],
+    "birth_years": [
+      "2017"
+    ]
+  },
+  {
+    "horse": "REUNITED",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ELZAAM"
+    ],
+    "dams": [
+      "HEADING TO MOPTI"
+    ],
+    "birth_years": [
+      "2025"
+    ]
+  },
+  {
+    "horse": "ROBAYERA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "TIME TEST"
+    ],
+    "dams": [
+      "OBERYN"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "RODABALLO",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "LOPE DE VEGA"
+    ],
+    "dams": [
+      "SHORT AFFAIR"
+    ],
+    "birth_years": [
+      "2017"
+    ]
+  },
+  {
+    "horse": "RODY´S SON",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "RODABALLO"
+    ],
+    "dams": [
+      "QUICK TO DECIDE"
+    ],
+    "birth_years": [
+      "2026"
+    ]
+  },
+  {
+    "horse": "ROSE CHAMPAN",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "HARRY ANGEL"
+    ],
+    "dams": [
+      "TRIPLE DIP"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "RULER OF THE WORLD",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "Galileo"
+    ],
+    "dams": [
+      "Love me True"
+    ],
+    "birth_years": []
+  },
+  {
+    "horse": "SAMAY",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "KENDARGENT"
+    ],
+    "dams": [
+      "MACINA"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "SANDY",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "CLOTH OF STAR"
+    ],
+    "dams": [
+      "GAROPABA"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "SANLAK",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "WOOTTON BASSETT"
+    ],
+    "dams": [
+      "WACARIA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "SANLUQUEÑA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "GALDANA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "SATIN CHIC",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MONSIEUR BOND"
+    ],
+    "dams": [
+      "SATIN DOLL"
+    ],
+    "birth_years": [
+      "2013"
+    ]
+  },
+  {
+    "horse": "SCANDALOUS",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MONSUN"
+    ],
+    "dams": [
+      "SADERLINA"
+    ],
+    "birth_years": [
+      "2011"
+    ]
+  },
+  {
+    "horse": "SHELBY",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "RELIABLE MAN"
+    ],
+    "dams": [
+      "ANYANA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "SHY GUY",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "ARDAD"
+    ],
+    "dams": [
+      "BIBLE BELT"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "SIR EDWARD",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "TIME TEST"
+    ],
+    "dams": [
+      "VIA EMILIA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "SIR POLO",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "TERRITORIES"
+    ],
+    "dams": [
+      "PATTERNED"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "SKYTREE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "LAWMAN"
+    ],
+    "dams": [
+      "FEEL ALIVE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "SOHRAB",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "HAVANA GREY"
+    ],
+    "dams": [],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "SOMMERSUN",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "SOMMERABEND"
+    ],
+    "dams": [
+      "SUNILA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "SONG OF DUBAI",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "IFFRAAJ"
+    ],
+    "dams": [
+      "MAKE IT RAIN"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "SPAGNA",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "LAND FORCE"
+    ],
+    "dams": [
+      "NOBLE MANNERS"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "SPIRITUALE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "NEW BAY"
+    ],
+    "dams": [
+      "SPIRITIS"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "STARLIGHT MYSTERY",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "IFFRAAJ"
+    ],
+    "dams": [
+      "ELECTRA STAR"
+    ],
+    "birth_years": [
+      "2015"
+    ]
+  },
+  {
+    "horse": "STRATEGY",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GALILEO GOLD"
+    ],
+    "dams": [
+      "SAJIDA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "SUCKING DIESEL",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ACLAIM"
+    ],
+    "dams": [
+      "SONKO"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "SUDAFRICA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CARADAK"
+    ],
+    "dams": [
+      "OPIKKOPI"
+    ],
+    "birth_years": [
+      "2017"
+    ]
+  },
+  {
+    "horse": "SUPER RAFALE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "HOLY ROMAN EMPEROR"
+    ],
+    "dams": [
+      "TOPKAPI"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "SUPER TRIP",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "TRIPLE TREAT"
+    ],
+    "dams": [
+      "SUPER ANNA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "SWEET CAROLINE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ZARAK"
+    ],
+    "dams": [
+      "SAVAGE ROSE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "SWEET HARLEY",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "FIRST ELEVEN"
+    ],
+    "dams": [
+      "MUSIQUE SACREE"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "TERALVA",
+    "categories": [
+      "Foal >6 meses destetado"
+    ],
+    "sires": [
+      "BOW CREEK"
+    ],
+    "dams": [
+      "VIANA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "THANDROSS",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "TIME TEST"
+    ],
+    "dams": [
+      "PILASTER"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "THE GAME",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "THE GURKHA"
+    ],
+    "dams": [
+      "SOLINA"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "THE SNAPPER",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "DRAGON PULSE"
+    ],
+    "dams": [
+      "SOVEREIGN STREET"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "THE WISER",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "SEA THE MOON"
+    ],
+    "dams": [
+      "SAGE MELODY"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "TRASTAMARA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "PIVOTAL"
+    ],
+    "dams": [
+      "ROSA CLARA"
+    ],
+    "birth_years": [
+      "2018"
+    ]
+  },
+  {
+    "horse": "TRECE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SLADE POWER"
+    ],
+    "dams": [
+      "LADY AMIRA"
+    ],
+    "birth_years": [
+      "2016"
+    ]
+  },
+  {
+    "horse": "TURIA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SCALO"
+    ],
+    "dams": [
+      "ITAQUI"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "UDALLA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DREAM AHEAD"
+    ],
+    "dams": [
+      "HIGH FIDELITY"
+    ],
+    "birth_years": [
+      "2016"
+    ]
+  },
+  {
+    "horse": "UNICO",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "GHAIYYATH"
+    ],
+    "dams": [
+      "VEGA SICILIA"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "URBAN COTAI",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "COTAI GLORY"
+    ],
+    "dams": [
+      "TAYARA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "URBAN TERRITORY",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "TERRITORIES"
+    ],
+    "dams": [
+      "NATHALIE"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "URBAN WELLS",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "Zezal"
+    ],
+    "dams": [
+      "Sudarynya"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "URRACA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "PALAMOSS"
+    ],
+    "dams": [
+      "CASBAH"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "USHUAIA",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "POSTPONED"
+    ],
+    "dams": [
+      "RIVARA"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "VALIANT BLUE",
+    "categories": [
+      "Retirados"
+    ],
+    "sires": [
+      "MOSS VALE"
+    ],
+    "dams": [
+      "TILTILI"
+    ],
+    "birth_years": [
+      "2009"
+    ]
+  },
+  {
+    "horse": "VERAS MAÑANA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CELTIC ROCK"
+    ],
+    "dams": [
+      "ARTESA"
+    ],
+    "birth_years": [
+      "2021"
+    ]
+  },
+  {
+    "horse": "VIANA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "CAMELOT"
+    ],
+    "dams": [
+      "CILIUM"
+    ],
+    "birth_years": [
+      "2017"
+    ]
+  },
+  {
+    "horse": "VIRIMOON",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "DOCTOR DINO"
+    ],
+    "dams": [
+      "TYMOON"
+    ],
+    "birth_years": [
+      "2011"
+    ]
+  },
+  {
+    "horse": "VIZCONDE",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "KODIAC"
+    ],
+    "dams": [
+      "MACARELLA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "WAKKANDA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MAGICIAN"
+    ],
+    "dams": [
+      "KETALA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "WAR OF DANCE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "MUHAARAR"
+    ],
+    "dams": [
+      "Granny bea"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "WHISTLEJACKET",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [],
+    "dams": [],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "WHITE KING",
+    "categories": [
+      "Semental"
+    ],
+    "sires": [
+      "FREE EAGLE"
+    ],
+    "dams": [
+      "DALMATIA"
+    ],
+    "birth_years": [
+      "2019"
+    ]
+  },
+  {
+    "horse": "WOODY WOODPECKER",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "RECOLETOS"
+    ],
+    "dams": [
+      "COMPTON BIRD"
+    ],
+    "birth_years": [
+      "2024"
+    ]
+  },
+  {
+    "horse": "YIAJO",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "SHALAA"
+    ],
+    "dams": [
+      "LOYAL HEROINE"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  },
+  {
+    "horse": "ZAMBEZIE",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "ZAMBEZI SUN"
+    ],
+    "dams": [
+      "JOHN QUATZ"
+    ],
+    "birth_years": [
+      "2011"
+    ]
+  },
+  {
+    "horse": "ZEPHYRA MOON",
+    "categories": [
+      "Pretraining"
+    ],
+    "sires": [
+      "KAMEKO"
+    ],
+    "dams": [
+      "LACAROLINA"
+    ],
+    "birth_years": [
+      "2023"
+    ]
+  },
+  {
+    "horse": "ZHARINA",
+    "categories": [
+      "Yegua de Cría"
+    ],
+    "sires": [
+      "OASIS DREAM"
+    ],
+    "dams": [
+      "ZAMZAMA"
+    ],
+    "birth_years": [
+      "2020"
+    ]
+  },
+  {
+    "horse": "ZYLEK",
+    "categories": [
+      "Descanso"
+    ],
+    "sires": [
+      "ZELZAL"
+    ],
+    "dams": [
+      "PRYCIA"
+    ],
+    "birth_years": [
+      "2022"
+    ]
+  }
+]
