@@ -1,7 +1,7 @@
 
 """Detecta nuevas victorias españolas de sementales de Yeguada Agrado.
 
-No importa resultados anteriores al 18/11/2026.
+No importa resultados anteriores al 01/01/2026.
 Comprueba el ganador en la ficha de resultados de Todoturf.
 Evita duplicados por fecha y caballo.
 
@@ -35,7 +35,8 @@ from bs4 import BeautifulSoup
 
 BASE = "https://www.todoturf.net/"
 CALENDAR = Path("calendar.json")
-START_DATE = date(2026, 11, 18)
+AGRADO = Path("caballos_agrado.json")
+START_DATE = date(2026, 1, 1)
 
 STALLIONS = (
     "BOW CREEK",
@@ -131,7 +132,7 @@ def horse_link(anchor):
     return url, norm(name)
 
 
-def products(sire):
+def products(sire, labels=None):
     lookup = (
         "BOW CREEK2"
         if sire == "BOW CREEK"
@@ -151,6 +152,8 @@ def products(sire):
         if result:
             horse_url, identifier = result
             found[identifier] = horse_url
+            if labels is not None:
+                labels[identifier] = anchor.get_text(" ", strip=True)
 
     print(
         f"PRODUCTOS | {sire} | {len(found)}",
@@ -472,6 +475,63 @@ def get_video_url(result_url):
 # PROCESO PRINCIPAL
 # -----------------------------------------
 
+def display_name(value):
+    value = re.sub(r",\s*(?:19|20)\d{2}$", "", str(value)).strip()
+    return re.sub(r"\s*\([A-Z]{2,3}\)$", "", value, flags=re.I).strip()
+
+
+def build_groups():
+    records = json.loads(AGRADO.read_text(encoding="utf-8"))
+    if not isinstance(records, list):
+        raise RuntimeError("caballos_agrado.json no contiene una lista")
+    cache = {}
+    groups = []
+    relations = {}
+    names = {}
+
+    def lookup(sire):
+        key = norm(sire)
+        if key not in cache:
+            labels = {}
+            horses = products(sire, labels)
+            cache[key] = (horses, labels)
+        return cache[key]
+
+    for sire in STALLIONS:
+        horses, labels = lookup(sire)
+        groups.append((sire, horses))
+        names.update({i: display_name(labels.get(i) or i) for i in horses})
+
+    extra = {}
+    for record in records:
+        name = str(record.get("horse", "")).strip()
+        if not name:
+            continue
+        matches = {}
+        for sire in record.get("sires", []):
+            if not str(sire).strip():
+                continue
+            try:
+                horses, labels = lookup(str(sire).strip().upper())
+            except Exception as exc:
+                print(f"AVISO PADRE | {name} | {sire} | {exc}", flush=True)
+                continue
+            for identifier, url in horses.items():
+                label = display_name(labels.get(identifier) or identifier)
+                if norm(label) == norm(display_name(name)):
+                    matches[identifier] = url
+        if len(matches) != 1:
+            print(f"AGRADO SIN IDENTIFICAR | {name} | coincidencias={len(matches)}", flush=True)
+            continue
+        identifier, url = next(iter(matches.items()))
+        extra[identifier] = url
+        names[identifier] = display_name(name)
+        relations[identifier] = sorted(set(relations.get(identifier, []) + record.get("categories", [])))
+    groups.append(("YEGUADA AGRADO", extra))
+    print(f"AGRADO | identificados={len(extra)} | registros={len(records)}", flush=True)
+    return groups, names, relations
+
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -515,9 +575,9 @@ def main():
     new_wins = []
     checked = set()
 
-    for sire in STALLIONS:
-        horses = products(sire)
+    groups, names, relations = build_groups()
 
+    for sire, horses in groups:
         for identifier, horse_url in horses.items():
             if identifier in checked:
                 continue
@@ -554,12 +614,13 @@ def main():
                     flags=re.I
                 ).strip()
 
+                horse = names.get(identifier, horse)
                 key = (
                     candidate["date"],
                     norm(horse)
                 )
 
-                if key in known:
+                if key in known or (candidate["date"], identifier) in known:
                     continue
 
                 # Verificación del ganador.
@@ -585,6 +646,9 @@ def main():
                     "url": candidate["url"],
                     "source": "todoturf_auto"
                 }
+
+                if identifier in relations:
+                    win["agrado_categories"] = relations[identifier]
 
                 # No se inventan enlaces a vídeos.
                 if video_url:
