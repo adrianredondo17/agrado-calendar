@@ -69,16 +69,6 @@
   ],
   "wins": [
     {
-      "date": "2026-08-02",
-      "horse": "PRETTY ROSE",
-      "stallion": "BOW CREEK",
-      "race": "Premio Critérium Nacional M.A.P.A.",
-      "venue": "San Sebastián, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=41&fecha=2026-08-02 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=41&fecha=2026-08-02 00:00:00&pais=ESP&tipo=LISO"
-    },
-    {
       "date": "2026-11-15",
       "horse": "PRETTY ROSE",
       "stallion": "BOW CREEK",
@@ -99,74 +89,164 @@
       "video_url": "https://www.todoturf.net/videocarrera.php?numero=222&fecha=2026-11-15 00:00:00&pais=ESP&tipo=LISO"
     },
     {
-      "date": "2026-02-01",
-      "horse": "SOMETHING",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Premio Hipódromo de Donostia - San Sebastián",
-      "venue": "Gran Hipódromo de Andalucía, Dos Hermanas",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=17&fecha=2026-02-01 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=17&fecha=2026-02-01 00:00:00&pais=ESP&tipo=LISO"
+      "date": "2026-11-15",
+      "horse": "ALBATROS C.C.",
+      "stallion": "BOW CREEK",
+      "race": "COPA DE CRIADORES - MANUEL DELGADO SÃNCHEZ-ARJONA (POTROS)",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=222&fecha=2026-11-15 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=222&fecha=2026-11-15 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
     },
     {
-      "date": "2026-03-08",
-      "horse": "IMAGINE",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Conchita Mínguez",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=7&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=7&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO"
+      "date": "2026-11-15",
+      "horse": "PRETTY ROSE (FR) (a) Y.C.",
+      "stallion": "BOW CREEK",
+      "race": "COPA DE CRIADORES - JAVIER NAVARRO REVERTER (POTRANCAS)",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=223&fecha=2026-11-15 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=223&fecha=2026-11-15 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
     },
     {
-      "date": "2026-03-08",
-      "horse": "ORION",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Luis de Goyeneche",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=8&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=8&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO"
-    },
-    {
-      "date": "2026-03-15",
-      "horse": "KOOZA",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Curva de las Perdices",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=12&fecha=2026-03-15 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=12&fecha=2026-03-15 00:00:00&pais=ESP&tipo=LISO"
-    },
-    {
-      "date": "2026-04-02",
-      "horse": "SOMETHING",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Premio Rafael Martínez",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=26&fecha=2026-04-02 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=26&fecha=2026-04-02 00:00:00&pais=ESP&tipo=LISO"
-    },
-    {
-      "date": "2026-04-02",
-      "horse": "ARAKA LA KANA",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Familia Barderas",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=27&fecha=2026-04-02 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=27&fecha=2026-04-02 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
-    },
-    {
-      "date": "2026-05-10",
+      "date": "2026-11-01",
       "horse": "EMPEL",
       "stallion": "NOOZHOH CANARIAS",
-      "race": "Eduardo Olgado",
+      "race": "Ovidio Rodríguez",
       "venue": "La Zarzuela, España",
       "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=62&fecha=2026-05-10 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=62&fecha=2026-05-10 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+      "url": "https://www.todoturf.net/resultados3.php?numero=210&fecha=2026-11-01 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=210&fecha=2026-11-01 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-11-01",
+      "horse": "KOOZA",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Karluv Most (2010/2012)",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=212&fecha=2026-11-01 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=212&fecha=2026-11-01 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-11-01",
+      "horse": "KOOZA C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "KARLUV MOST (2010/2012)",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=212&fecha=2026-11-01 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=212&fecha=2026-11-01 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-10-11",
+      "horse": "ANIMO LOLA",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Gran Premio Subasta ACPSIE 2025",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=192&fecha=2026-10-11 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=192&fecha=2026-10-11 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-08-30",
+      "horse": "RONCAL",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Copa Promesas - Elite Equestrian",
+      "venue": "San Sebastián, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=68&fecha=2026-08-30 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO ",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=68&fecha=2026-08-30 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-08-02",
+      "horse": "PRETTY ROSE",
+      "stallion": "BOW CREEK",
+      "race": "Premio Critérium Nacional M.A.P.A.",
+      "venue": "San Sebastián, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=41&fecha=2026-08-02 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=41&fecha=2026-08-02 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-08-02",
+      "horse": "EMPEL",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Noticias de Gipuzkoa",
+      "venue": "San Sebastián, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=42&fecha=2026-08-02 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO ",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=42&fecha=2026-08-02 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-08-02",
+      "horse": "PRETTY ROSE (FR) (a) Y.C.",
+      "stallion": "BOW CREEK",
+      "race": "CRITÃRIUM NACIONAL M.A.P.A. (Nacidos y criados en EspaÃ±a y asimilados)",
+      "venue": "SAN SEBASTIAN, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=41&fecha=2026-08-02 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=41&fecha=2026-08-02 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-07-16",
+      "horse": "LAGUNA",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Cría Nacional - Colorines",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=134&fecha=2026-07-16 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=134&fecha=2026-07-16 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-07-16",
+      "horse": "LAGUNA Y.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "CRÃA NACIONAL - COLORINES",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=134&fecha=2026-07-16 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=134&fecha=2026-07-16 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-06-20",
+      "horse": "IMAGINE",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Richal (1984/1985)",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=104&fecha=2026-06-20 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=104&fecha=2026-06-20 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-06-20",
+      "horse": "IMAGINE C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "RICHAL (1984/1985) Patrocinado por El Ganso \"Blue Code\"",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=104&fecha=2026-06-20 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=104&fecha=2026-06-20 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-06-18",
+      "horse": "ADRI",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Cría Nacional - Gonzalo Ussía",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=100&fecha=2026-06-18 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=100&fecha=2026-06-18 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-06-18",
+      "horse": "ADRI Y.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "CRÃA NACIONAL - GONZALO USSÃA",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=100&fecha=2026-06-18 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=100&fecha=2026-06-18 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
     },
     {
       "date": "2026-06-14",
@@ -189,85 +269,135 @@
       "video_url": "https://www.todoturf.net/videocarrera.php?numero=92&fecha=2026-06-14 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
     },
     {
-      "date": "2026-06-18",
-      "horse": "ADRI",
+      "date": "2026-06-14",
+      "horse": "ORION C.C.",
       "stallion": "NOOZHOH CANARIAS",
-      "race": "Cría Nacional - Gonzalo Ussía",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=100&fecha=2026-06-18 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=100&fecha=2026-06-18 00:00:00&pais=ESP&tipo=LISO"
+      "race": "JOSÃ LUIS MARTÃNEZ \"MAGIC\"",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=93&fecha=2026-06-14 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=93&fecha=2026-06-14 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
     },
     {
-      "date": "2026-06-20",
-      "horse": "IMAGINE",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Richal (1984/1985)",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=104&fecha=2026-06-20 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=104&fecha=2026-06-20 00:00:00&pais=ESP&tipo=LISO"
-    },
-    {
-      "date": "2026-07-16",
-      "horse": "LAGUNA",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Cría Nacional - Colorines",
-      "venue": "La Zarzuela, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=134&fecha=2026-07-16 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=134&fecha=2026-07-16 00:00:00&pais=ESP&tipo=LISO"
-    },
-    {
-      "date": "2026-08-02",
+      "date": "2026-05-10",
       "horse": "EMPEL",
       "stallion": "NOOZHOH CANARIAS",
-      "race": "Noticias de Gipuzkoa",
-      "venue": "San Sebastián, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=42&fecha=2026-08-02 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO ",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=42&fecha=2026-08-02 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO "
-    },
-    {
-      "date": "2026-08-30",
-      "horse": "RONCAL",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Copa Promesas - Elite Equestrian",
-      "venue": "San Sebastián, España",
-      "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=68&fecha=2026-08-30 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO ",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=68&fecha=2026-08-30 00:00:00&hipodromo=SAN SEBASTIAN&pais=ESP&tipo=LISO "
-    },
-    {
-      "date": "2026-10-11",
-      "horse": "ANIMO LOLA",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Gran Premio Subasta ACPSIE 2025",
+      "race": "Eduardo Olgado",
       "venue": "La Zarzuela, España",
       "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=192&fecha=2026-10-11 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=192&fecha=2026-10-11 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+      "url": "https://www.todoturf.net/resultados3.php?numero=62&fecha=2026-05-10 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=62&fecha=2026-05-10 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
     },
     {
-      "date": "2026-11-01",
-      "horse": "EMPEL",
+      "date": "2026-04-02",
+      "horse": "SOMETHING",
       "stallion": "NOOZHOH CANARIAS",
-      "race": "Ovidio Rodríguez",
+      "race": "Premio Rafael Martínez",
       "venue": "La Zarzuela, España",
       "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=210&fecha=2026-11-01 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=210&fecha=2026-11-01 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+      "url": "https://www.todoturf.net/resultados3.php?numero=26&fecha=2026-04-02 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=26&fecha=2026-04-02 00:00:00&pais=ESP&tipo=LISO"
     },
     {
-      "date": "2026-11-01",
+      "date": "2026-04-02",
+      "horse": "ARAKA LA KANA",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Familia Barderas",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=27&fecha=2026-04-02 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=27&fecha=2026-04-02 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-04-02",
+      "horse": "SOMETHING C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "RAFAEL MARTÃNEZ (AMAZONAS Y GENTLEMEN)",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=26&fecha=2026-04-02 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=26&fecha=2026-04-02 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-03-15",
       "horse": "KOOZA",
       "stallion": "NOOZHOH CANARIAS",
-      "race": "Karluv Most (2010/2012)",
+      "race": "Curva de las Perdices",
       "venue": "La Zarzuela, España",
       "source": "historical_squarespace_2026",
-      "url": "https://www.todoturf.net/resultados3.php?numero=212&fecha=2026-11-01 00:00:00&pais=ESP&tipo=LISO",
-      "video_url": "https://www.todoturf.net/videocarrera.php?numero=212&fecha=2026-11-01 00:00:00&pais=ESP&tipo=LISO"
+      "url": "https://www.todoturf.net/resultados3.php?numero=12&fecha=2026-03-15 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=12&fecha=2026-03-15 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-03-15",
+      "horse": "KOOZA C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "CURVA DE LAS PERDICES",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=12&fecha=2026-03-15 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=12&fecha=2026-03-15 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-03-08",
+      "horse": "IMAGINE",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Conchita Mínguez",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=7&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=7&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-03-08",
+      "horse": "ORION",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Luis de Goyeneche",
+      "venue": "La Zarzuela, España",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=8&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=8&fecha=2026-03-08 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-03-08",
+      "horse": "IMAGINE C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "CONCHITA MÃNGUEZ",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=7&fecha=2026-03-08 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=7&fecha=2026-03-08 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-03-08",
+      "horse": "ORION C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "LUIS DE GOYENECHE",
+      "venue": "LA ZARZUELA, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=8&fecha=2026-03-08 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=8&fecha=2026-03-08 00:00:00&hipodromo=LA ZARZUELA&pais=ESP&tipo=LISO "
+    },
+    {
+      "date": "2026-02-01",
+      "horse": "SOMETHING",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "Premio Hipódromo de Donostia - San Sebastián",
+      "venue": "Gran Hipódromo de Andalucía, Dos Hermanas",
+      "source": "historical_squarespace_2026",
+      "url": "https://www.todoturf.net/resultados3.php?numero=17&fecha=2026-02-01 00:00:00&pais=ESP&tipo=LISO",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=17&fecha=2026-02-01 00:00:00&pais=ESP&tipo=LISO"
+    },
+    {
+      "date": "2026-02-01",
+      "horse": "SOMETHING C.C.",
+      "stallion": "NOOZHOH CANARIAS",
+      "race": "HIPÃDROMO DE DONOSTIA-SAN SEBASTIÃN (MADE IN SPAIN)",
+      "venue": "DOS HERMANAS, España",
+      "url": "https://www.todoturf.net/resultados3.php?numero=17&fecha=2026-02-01 00:00:00&hipodromo=DOS HERMANAS&pais=ESP&tipo=LISO ",
+      "source": "todoturf_auto",
+      "video_url": "https://www.todoturf.net/videocarrera.php?numero=17&fecha=2026-02-01 00:00:00&hipodromo=DOS HERMANAS&pais=ESP&tipo=LISO "
     }
   ],
-  "lastUpdated": "2026-11-24T13:02:32.758110+00:00"
+  "lastUpdated": "2026-11-25T04:07:11.183764+00:00"
 }
