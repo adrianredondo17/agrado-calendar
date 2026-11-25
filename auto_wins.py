@@ -318,10 +318,35 @@ def winners(soup):
         if a and horse_link(a):
             yield clean(a.get_text(' ',strip=True)), horse_link(a)[1]
 
+def eligible_categories(record, day):
+    race_day = date.fromisoformat(day)
+    valid = set()
+    for stay in (record or {}).get('stays', []):
+        category = stay['category']
+        kind = norm(category)
+        entry = stay.get('entry')
+        exit_day = stay.get('exit')
+        if not entry or not exit_day:
+            continue
+        start, end = date.fromisoformat(entry), date.fromisoformat(exit_day)
+        if end < start or race_day < end:
+            continue
+        if kind in ('DESCANSO', 'RECUPERACION'):
+            try:
+                limit = end.replace(year=end.year + 1)
+            except ValueError:
+                limit = end.replace(year=end.year + 1, day=28)
+            if end < race_day <= limit:
+                valid.add(category)
+        elif kind in ('PRETRAINING', 'DOMA', 'DOMA Y PRETRAINING', 'YEARLING PRE SUBASTA', 'YEARLING 1 ANO', 'FOAL 2 MESES', 'FOAL 6 MESES DESTETADO'):
+            valid.add(category)
+    return sorted(valid)
+
 def main():
     parser=argparse.ArgumentParser(); parser.add_argument('--publish',action='store_true'); args=parser.parse_args()
     calendar=json.loads(CALENDAR.read_text(encoding='utf-8'))
     roster={key(x['horse']):x for x in json.loads(AGRADO.read_text(encoding='utf-8'))}
+    if any('stays' not in x for x in roster.values()): raise RuntimeError('Faltan fechas de estancias en caballos_agrado.json')
     sire_ids={}
     for sire in STALLIONS:
         for identifier in products(sire):
@@ -335,7 +360,7 @@ def main():
             for field,val in w.items():
                 if val and not existing[k].get(field): existing[k][field]=val
         else: existing[k]=w
-    new_count=0; checked=0; meetings_count=0
+    new_count=0; checked=0; meetings_count=0; excluded=0
     for year in range(START_DATE.year,date.today().year+1):
         index=get(BASE+'resultados.php', {'ano':str(year),'hipodromo':'ESPANA','Submit':'Buscar'})
         meetings=links(index,'resultados2.php')
@@ -353,11 +378,19 @@ def main():
                 if not title or not ws: raise RuntimeError('Resultado no interpretable: '+url)
                 for name,identifier in ws:
                     record=roster.get(key(name)); sire=sire_ids.get(identifier)
-                    if not record and not sire: continue
+                    categories=eligible_categories(record,day)
                     if record: name=record['horse']
                     k=(day,key(name)); old=existing.get(k)
+                    if not categories and not sire:
+                        if record:
+                            print('EXCLUIDA POR FECHAS O CATEGORIA |',name,day,flush=True)
+                            excluded+=1
+                        if old and old.get('source')=='todoturf_auto' and old.get('stallion')=='YEGUADA AGRADO':
+                            existing.pop(k)
+                        continue
                     win={'date':day,'horse':name,'stallion':sire or 'YEGUADA AGRADO','race':title.get_text(' ',strip=True),'venue':venue+', España','url':url,'source':'todoturf_auto'}
-                    if record: win['agrado_categories']=record['categories']
+                    if categories: win['agrado_categories']=categories
+                    elif old: old.pop('agrado_categories',None)
                     if old and old.get('video_url'): win['video_url']=old['video_url']
                     else:
                         v=get_video_url(url)
@@ -365,7 +398,7 @@ def main():
                     if old: existing[k]={**old,**win}
                     else: existing[k]=win; new_count+=1; print('NUEVA VICTORIA |',name,day,flush=True)
             print('JORNADA |',day,venue,len(races),flush=True)
-    print(f'RESUMEN | jornadas={meetings_count} carreras={checked} nuevas={new_count} duplicados={duplicates} total={len(existing)}',flush=True)
+    print(f'RESUMEN | jornadas={meetings_count} carreras={checked} nuevas={new_count} duplicados={duplicates} excluidas={excluded} total={len(existing)}',flush=True)
     if args.publish:
         calendar['wins']=sorted(existing.values(),key=lambda w:w['date'],reverse=True)
         calendar['lastUpdated']=datetime.now(timezone.utc).isoformat()
