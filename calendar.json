@@ -7,26 +7,6 @@
   ],
   "participants": [
     {
-      "date": "2026-11-22",
-      "horse": "BOLONIA",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Premio ENRIQUE ROMERA",
-      "jockey": "D. SIKOROVA (G.Roja)",
-      "number": "10",
-      "url": "https://www.todoturf.net/programa3.php?numero=228&fecha=2026-11-22 00:00:00&pais=ESP&tipo=LISO",
-      "status": "confirmed"
-    },
-    {
-      "date": "2026-11-22",
-      "horse": "EMPEL",
-      "stallion": "NOOZHOH CANARIAS",
-      "race": "Premio GRAN PREMIO ANTONIO BLASCO",
-      "jockey": "G. ARGUINZONES",
-      "number": "1",
-      "url": "https://www.todoturf.net/programa3.php?numero=232&fecha=2026-11-22 00:00:00&pais=ESP&tipo=LISO",
-      "status": "confirmed"
-    },
-    {
       "date": "2026-11-29",
       "horse": "RONCAL",
       "stallion": "NOOZHOH CANARIAS",
@@ -574,5 +554,5 @@
       "video_url": "https://www.todoturf.net/videocarrera.php?numero=15&fecha=2026-01-25 00:00:00&pais=ESP&tipo=LISO"
     }
   ],
-  "lastUpdated": "2026-11-25T13:10:36.118283+00:00"
+  "lastUpdated": "2026-11-26T13:08:33.055371+00:00"
 }
